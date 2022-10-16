@@ -3,12 +3,12 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
-import { FontAwesome, AntDesign } from '@expo/vector-icons';
+import { FontAwesome, AntDesign,Ionicons, Foundation } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { ColorSchemeName, Pressable } from 'react-native';
+import { ColorSchemeName, Pressable, View } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -20,6 +20,8 @@ import GroupsTab from '../screens/GroupsTab';
 import TutorsTab from '../screens/TutorsTab';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import ProfilePicture from '../components/ProfilePicture';
+
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -36,11 +38,13 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
  * https://reactnavigation.org/docs/modal
  */
 const Stack = createNativeStackNavigator<RootStackParamList>();
-
+const HomeStack = createNativeStackNavigator<RootTabParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
+      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }}
+        
+      />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Settings" component={SettingsTab} />
@@ -68,8 +72,12 @@ function BottomTabNavigator() {
         name="Feed"
         component={FeedTab}
         options={({ navigation }: RootTabScreenProps<'Feed'>) => ({
-          title: 'Feed',
+  
           tabBarIcon: ({ color }) => <TabBarIcon name="feed" color={color} />,
+          headerTitle: () => (
+            <Foundation name={"social-skillshare"} size={40}  color={Colors.light.tint}/>
+          ),
+          headerTitleAlign: 'center',
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Settings')}
@@ -84,7 +92,14 @@ function BottomTabNavigator() {
               />
             </Pressable>
           ),
-        })}
+          headerLeftContainerStyle: {
+            marginLeft: 15,
+                  
+          },
+          headerLeft: () => (
+            <ProfilePicture size={40} image={'https://www.thehindu.com/sci-tech/technology/internet/article17759222.ece/alternates/FREE_1200/02th-egg-person'}/>
+          ),
+          })}
       />
       <BottomTab.Screen
         name="Chat"
@@ -92,6 +107,11 @@ function BottomTabNavigator() {
         options={{
           title: 'Chat',
           tabBarIcon: ({ color }) => <TabBarIcon name="wechat" color={color} />,
+          headerTitle: () => (
+            <Foundation name={"social-skillshare"} size={30}  color={Colors.light.tint}/>
+          ),
+          headerTitleAlign: 'center',
+          
         }}
       />
       <BottomTab.Screen
@@ -100,6 +120,11 @@ function BottomTabNavigator() {
         options={{
           title: 'Groups',
           tabBarIcon: ({ color }) => <TabBarIcon name="group" color={color} />,
+          headerTitle: () => (
+            <Foundation name={"social-skillshare"} size={30}  color={Colors.light.tint}/>
+          ),
+          headerTitleAlign: 'center',
+          
         }}
       />
       <BottomTab.Screen
@@ -108,6 +133,10 @@ function BottomTabNavigator() {
         options={{
           title: 'Tutors',
           tabBarIcon: ({ color }) => <TabBarIcon name="id-card" color={color} />,
+          headerTitle: () => (
+            <Foundation name={"social-skillshare"} size={30}  color={Colors.light.tint}/>
+          ),
+          headerTitleAlign: 'center',
         }}
       />
     </BottomTab.Navigator>
@@ -121,6 +150,11 @@ function BottomTabNavigator() {
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
   color: string;
+  justifyContent?:string;
+  headerTitle?: string;
 }) {
   return <FontAwesome size={23} style={{ marginBottom: -3 }} {...props} />;
 }
+
+// const FeedTab = createBottomTabNavigator<RootTabParamList>();
+
