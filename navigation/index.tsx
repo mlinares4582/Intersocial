@@ -158,3 +158,4 @@ function TabBarIcon(props: {
 
 // const FeedTab = createBottomTabNavigator<RootTabParamList>();
 
+//ME QUEDE EN EL MINUTO 36:54 PARA LA PARTE DEL TWEET
