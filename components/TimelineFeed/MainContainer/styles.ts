@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
+        marginHorizontal: 10,
     },
     postHeaderContainer: {
         flexDirection: 'row',
@@ -13,21 +14,34 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     name: {
-        marginHorizontal: 5,
+        marginRight: 5,
         fontWeight: 'bold',
     },
     username: {
-        marginHorizontal: 5,
+        marginRight: 5,
         color: 'gray',
     },
     createdAt: {
-        marginHorizontal: 5,
+        marginRight: 5,
         color: 'gray',
     },
 
     chevronIcon: {
-        color: 'gray',
-        
+        color: 'gray', 
+    },
+    
+    content: {
+        lineHeight: 17 ,
+        marginTop: 5,   
+    },
+
+    image: {
+        width: '100%',
+        height: 190,
+        resizeMode: 'cover',
+        borderRadius: 15,
+        overflow: 'hidden',
+        marginVertical: 10,
     }
 
 });
