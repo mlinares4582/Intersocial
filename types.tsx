@@ -31,6 +31,27 @@ export type RootTabParamList = {
   Tutors: undefined;
 };
 
+export type UserType = {
+  id: string,
+  name: string,
+  username: string,
+  image?: string,
+}
+
+
+export type PostType = {
+  id: string,
+  createdAt: string,
+  user: UserType,
+  content: string,
+  image?: string,
+  numberOfComments?: number,
+  numberOfLikes?: number,
+  numberOfShares?: number,
+}
+
+
+
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
   BottomTabScreenProps<RootTabParamList, Screen>,
   NativeStackScreenProps<RootStackParamList>

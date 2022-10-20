@@ -2,9 +2,21 @@ import React from "react";
 import { Image }  from 'react-native';
 
 export type ProfilePictureProps = {
-    image: string;
+    image?: string;
     size?:number;
+    source?: string;
 }
+
+// const ProfilePicture = ({ size = 50}: ProfilePictureProps) =>(
+//     <Image 
+//         source={require('')} 
+//         style={{width: size, 
+//                 height: size, 
+//                 borderRadius:size
+//             }} 
+//         />
+// )
+// {uri: image}
 
 const ProfilePicture = ({image, size = 50}: ProfilePictureProps) =>(
     <Image 
@@ -15,6 +27,5 @@ const ProfilePicture = ({image, size = 50}: ProfilePictureProps) =>(
             }} 
         />
 )
-
 
 export default ProfilePicture;
