@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { UserType } from '../../../types';
 import ProfilePicture from '../../ProfilePicture';
 
+
 export type LeftContianerProps = {
     user: UserType,
 
