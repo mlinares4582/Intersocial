@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     postHeaderContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        marginTop: 5
     },
     postHeaderName: {
         flexDirection: 'row',
@@ -28,6 +29,7 @@ const styles = StyleSheet.create({
 
     chevronIcon: {
         color: 'gray', 
+        alignItems: 'center',
     },
     
     content: {

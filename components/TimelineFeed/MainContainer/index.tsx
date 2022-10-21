@@ -4,6 +4,7 @@ import { PostType } from '../../../types';
 import styles from './styles'
 import { Ionicons } from '@expo/vector-icons';
 import Footer from './Footer'; 
+import moment from 'moment';
 
 export type MainContianerProps = {
     post: PostType;
@@ -16,7 +17,7 @@ const MainContianer = ({ post }: MainContianerProps) => (
             <View style={styles.postHeaderName}>
                 <Text style={styles.name}>{post.user.name}</Text>
                 <Text style={styles.username}>@{post.user.username}</Text>
-                <Text style={styles.createdAt}>15s</Text>  
+                <Text style={styles.createdAt}>{moment(post.createdAt).fromNow()}</Text>  
             </View> 
             <Ionicons name={"chevron-down"} style={styles.chevronIcon} size={16} />
         </View>

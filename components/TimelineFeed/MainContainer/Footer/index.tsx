@@ -4,6 +4,8 @@ import { PostType } from '../../../../types';
 import styles from './styles'
 import { Ionicons, Feather, AntDesign, FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 
+
+
 export type FooterProps = {
     post: PostType;
 
