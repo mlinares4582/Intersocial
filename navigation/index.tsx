@@ -127,7 +127,7 @@ function BottomTabNavigator() {
 
           headerRight: () => (
             <Pressable
-              onPress={() => navigation.navigate('Settings')}
+            onPress={() => navigation.navigate('Settings')}
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
               })}>
