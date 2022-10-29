@@ -15,6 +15,7 @@ declare global {
 
 export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
+  NewPost: undefined;
   Settings: undefined;
   NotFound: undefined;
 };
@@ -52,5 +53,8 @@ export type PostType = {
   content: string,
   image?: string,
   NumberOfComments?: number,
-  NunberOfLikes?: number,
+  NumberOfLikes?: number,
+  NumberOfShares?: number,
 }
+
+// NumberOfShares: ReactNode; MICHALE LO TENIA ASI

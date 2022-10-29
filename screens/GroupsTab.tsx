@@ -2,14 +2,17 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-import GroupTimeline from '../components/GroupTimeline';
+import GroupFeed from '../components/GroupFeed';
 
-import posts from '../GroupData/GroupPost';
+//import posts from '../GroupData/GroupPost';
+import GroupButton from '../components/GroupButton';
+
 
 export default function GroupsTab() {
 return (
     <View style={styles.container}>
-        <GroupTimeline post={posts[0]} />
+        <GroupFeed  />
+        <GroupButton />
     </View>
 );
 }
