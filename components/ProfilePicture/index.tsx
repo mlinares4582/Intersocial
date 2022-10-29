@@ -20,7 +20,7 @@ export type ProfilePictureProps = {
 
 const ProfilePicture = ({image, size = 40}: ProfilePictureProps) =>(
     <Image 
-        source={{uri: image}} 
+        source={{uri: image}} //Here we can change the image to local(for now we can get it from address link in google)
         style={{width: size, 
                 height: size, 
                 borderRadius:size,

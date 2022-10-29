@@ -5,6 +5,7 @@ import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import Feed from '../components/Feed';
 import postFeed from '../data/timelinePost';
+import React from 'react';
 
 // export default function FeedTab({ navigation }: RootTabScreenProps<'Feed'>) {
 export default function FeedTab() {

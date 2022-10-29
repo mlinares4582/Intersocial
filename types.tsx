@@ -15,6 +15,7 @@ declare global {
 
 export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
+  NewPost: undefined;
   Settings: undefined;
   NotFound: undefined;
 };
@@ -56,3 +57,10 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> = Composit
   BottomTabScreenProps<RootTabParamList, Screen>,
   NativeStackScreenProps<RootStackParamList>
 >;
+
+
+
+
+
+
+// NumberOfShares: ReactNode; MICHALE LO TENIA ASI

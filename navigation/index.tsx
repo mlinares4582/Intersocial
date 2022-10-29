@@ -20,9 +20,8 @@ import GroupsTab from '../screens/GroupsTab';
 import TutorsTab from '../screens/TutorsTab';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
-import ProfilePicture from '../components/ProfilePicture';
-import styles from '../components/TimelineFeed/styles';
-
+import ProfilePicture from '../components/ProfilePicture'; //profile picture 
+import NewPostScreen from '../screens/NewPostScreen';
 
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
@@ -44,9 +43,8 @@ const HomeStack = createNativeStackNavigator<RootTabParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }}
-        
-      />
+      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }}/>
+      <Stack.Screen name= "NewPost" component={NewPostScreen} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Settings" component={SettingsTab} />
@@ -116,7 +114,7 @@ function BottomTabNavigator() {
           title: 'Chat',
           tabBarIcon: ({ color }) => <TabBarIcon name="wechat" color={color} />,
           headerTitle: () => (
-            <Foundation name={"social-skillshare"} size={30}  color={Colors.light.tint}/>
+            <Foundation name={"social-skillshare"} size={40}  color={Colors.light.tint}/>
           ),
           headerTitleAlign: 'center',
           
@@ -129,9 +127,37 @@ function BottomTabNavigator() {
           title: 'Groups',
           tabBarIcon: ({ color }) => <TabBarIcon name="group" color={color} />,
           headerTitle: () => (
-            <Foundation name={"social-skillshare"} size={30}  color={Colors.light.tint}/>
+            <Foundation name={"social-skillshare"} size={40}  color={Colors.light.tint}/>
           ),
           headerTitleAlign: 'center',
+
+          headerRight: () => (
+            <Pressable
+            onPress={() => navigation.navigate('Settings')}
+              style={({ pressed }) => ({
+                opacity: pressed ? 0.5 : 1,
+              })}>
+              <AntDesign
+                name="setting"
+                size={25}
+                color={Colors[colorScheme].text}
+                style={{ marginRight: 15 }}
+              />
+            </Pressable>
+          ),
+          headerLeftContainerStyle: {
+            marginLeft: 15,
+                  
+          },
+          headerLeft: () => (
+            <ProfilePicture size={40} image={'https://avatarfiles.alphacoders.com/277/thumb-277051.png'}/>
+          ),
+          
+
+
+
+
+
           
         }}
       />
@@ -142,7 +168,7 @@ function BottomTabNavigator() {
           title: 'Tutors',
           tabBarIcon: ({ color }) => <TabBarIcon name="id-card" color={color} />,
           headerTitle: () => (
-            <Foundation name={"social-skillshare"} size={30}  color={Colors.light.tint}/>
+            <Foundation name={"social-skillshare"} size={40}  color={Colors.light.tint}/>
           ),
           headerTitleAlign: 'center',
         }}
