@@ -21,7 +21,6 @@ import TutorsTab from '../screens/TutorsTab';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import ProfilePicture from '../components/ProfilePicture';
-import styles from '../components/TimelineFeed/styles';
 import NewPostScreen from '../screens/NewPostScreen';
 
 
@@ -46,7 +45,7 @@ function RootNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }}/>
-      <Stack.Screen name="NewPost" component={NewPostScreen}/>
+      <Stack.Screen name="NewPost" component={NewPostScreen} options={{headerShown:false}}/>
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Settings" component={SettingsTab} />
