@@ -12,7 +12,7 @@ const GroupButton = () => {
     const navigation = useNavigation();
 
     const onPress= () => {
-        navigation.navigate('NewPost')
+        navigation.navigate('NewGroupPost')
     }
 
     return (

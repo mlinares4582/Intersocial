@@ -8,13 +8,12 @@ const styles = StyleSheet.create({
         //backgroundColor: 'red',
     },
     iconContainer: {
-        flexDirection: "row",
-        alignItems: "center",
+        flexDirection:"row",
+        alignItems:"center"
     },
     number: {
-        color:'grey',
-        marginLeft: 5, 
-        textAlign: 'center',
+        color: 'gray',
+        marginLeft: 5,
     },
     
 

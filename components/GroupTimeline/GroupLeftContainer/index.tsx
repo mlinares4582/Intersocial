@@ -10,7 +10,7 @@ export type GroupLeftContainerProps = {
 
 const GroupLeftContainer  = ({user}:GroupLeftContainerProps ) => (
     <View>
-        <ProfilePicture image={user.image} size={75} />
+        <ProfilePicture image={user.image} size={55} />
     </View>
 )
 

@@ -6,13 +6,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         marginHorizontal: 10,
-        //backgroundColor: 'blue',
     },
     PostHeaderContainer: {
-        //flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        //backgroundColor: 'red',
+        marginTop: 5
         
     },
     PostHeaderName: {
@@ -26,23 +24,23 @@ const styles = StyleSheet.create({
     },
     username: {
         marginRight: 5,
-        color: "grey"
+        color: 'gray',
     },
     createdAt: {
         marginRight: 5,
         color: "grey"
     },
     content: {
-        marginTop: 5,
-        lineHeight: 18,
+        lineHeight: 17 ,
+        marginTop: 5,   
     },
     image: {
-        marginVertical: 10,
-        width: "100%",
-        height: 200,
+        width: '100%',
+        height: 190,
         resizeMode: 'cover',
-        borderRadius: 15, 
-        overflow: "hidden",
+        borderRadius: 15,
+        overflow: 'hidden',
+        marginVertical: 10,
     },
 });
 

@@ -9,7 +9,7 @@ import ProfilePicture from '../components/ProfilePicture';
 // export default function FeedTab({ navigation }: RootTabScreenProps<'Feed'>) {
 export default function NewPostScreen() {
 
-const [post ,setPost] = useState("Hellow ")
+const [post ,setPost] = useState("")
 const [imageUrl ,setImageUrl] = useState("")
 
 const onPressPost = () => {

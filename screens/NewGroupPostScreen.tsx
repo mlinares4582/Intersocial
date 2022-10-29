@@ -7,6 +7,7 @@ import GroupButton from '../components/GroupButton';
 import { AntDesign } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import ProfilePicture from '../components/ProfilePicture';
+import Colors from '../constants/Colors';
 
 export default function NewPostScreen() {
 
@@ -14,7 +15,7 @@ export default function NewPostScreen() {
     const [imageUrl,setimageUrl] = useState("");
 
 
-    const onPostPost = () => {
+    const onPressPost = () => {
         console.log(`Posting: ${post}
         Image: ${imageUrl}`);
     }
@@ -23,8 +24,8 @@ export default function NewPostScreen() {
 return (
     <SafeAreaView style={styles.container}>
         <View style= {styles.headerContainer}>
-        <AntDesign name="close" size={30} color="#008000" />
-        <TouchableOpacity style={styles.button} onPress={onPostPost}>
+        <AntDesign name="closecircleo" size={30} color="#008000" />
+        <TouchableOpacity style={styles.button} onPress={onPressPost}>
             <Text style= {styles.buttonText}>Post</Text>
         </TouchableOpacity>
         </View>
@@ -37,7 +38,7 @@ return (
                 multiline={true}
                 numberOfLines={3}
                 style={styles.PostInput}
-                placeholder="What's happening?"
+                placeholder="What's new?"
             />
                 <TextInput
                 value={imageUrl}
@@ -57,7 +58,7 @@ container: {
     flex: 1,
     alignItems: 'flex-start',
     backgroundColor: 'white',
-    //justifyContent: 'center',
+    paddingVertical:25
 },
 headerContainer: {
     width: '100%',
@@ -66,15 +67,15 @@ headerContainer: {
     padding:15,
 },
 button: {
-    backgroundColor: '#008000',
+    backgroundColor: Colors.light.tint,
     borderRadius: 30,
 },
 buttonText: {
     paddingHorizontal: 20,
-    paddingVertical: 10,
-    color: 'White',
+    paddingvertical:10,
+    color: 'white',
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 18
 
 },
 NewPostContainer: {
