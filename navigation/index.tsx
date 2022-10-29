@@ -23,6 +23,9 @@ import LinkingConfiguration from './LinkingConfiguration';
 import ProfilePicture from '../components/ProfilePicture';
 import NewPostScreen from '../screens/NewPostScreen';
 import NewGroupPostScreen from '../screens/NewGroupPostScreen';
+import { useEffect, useState } from 'react';
+import {API, Auth, graphqlOperation} from 'aws-amplify'
+import { getUser } from '../graphql/queries';
 
 
 
@@ -63,6 +66,31 @@ function RootNavigator() {
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    //get the current user
+    const fetchUser = async () => {
+      const userInfo = await Auth.currentAuthenticatedUser({bypassCache: true});
+      if(!userInfo) {
+        return;
+      }
+      try {
+        const userData = await API.graphql(graphqlOperation(getUser, {id: userInfo.attributes.sub}));
+        console.log(userData)
+        if (userData) {
+
+          setUser(userData.data.getUser)
+        }
+      }catch (e) {
+        console.log(e)
+      }
+    } 
+    fetchUser();
+
+  }, [])
+
   const colorScheme = useColorScheme();
 
   return (
@@ -106,7 +134,7 @@ function BottomTabNavigator() {
           },
           headerLeft: () => (
             // <ProfilePicture size={40} image={'instersocial\Photos\logo_inter-removebg-preview.png'}/>
-            <ProfilePicture  size={40} image={'https://img.wattpad.com/d140fc81f50580bbbdff75a8bacfe234d926bfa0/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f70554e59615a336c772d796d6c513d3d2d3838363835393831342e313630666262663161636666343836383330333737383834363434382e6a7067?s=fit&w=720&h=720'}/>
+            <ProfilePicture  size={40} image={user?.['image']}/>
           ),
           })}
       />
@@ -153,7 +181,7 @@ function BottomTabNavigator() {
                   
           },
           headerLeft: () => (
-            <ProfilePicture size={40} image={'https://avatarfiles.alphacoders.com/277/thumb-277051.png'}/>
+            <ProfilePicture  size={40} image={user?.['image']}/>
           ),
           
 

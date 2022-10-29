@@ -10,8 +10,6 @@ import Navigation from './navigation';
 import { getUser } from './graphql/queries';
 import { createUser } from './graphql/mutations';
 import { CreateUserInput, CreateUserMutation } from './API';
-// import {getUser} from './src/grapql/queries';
-
 
 Amplify.configure(awsconfig)
 
@@ -20,7 +18,7 @@ Amplify.configure(awsconfig)
   const colorScheme = useColorScheme();
 
   const getRandomImage = () => {
-    return 'https://internados.bayamon.inter.edu/wp-content/uploads/2022/07/Capture-1024x789.jpg'
+    return 'https://i.pinimg.com/280x280_RS/58/bd/d2/58bdd26dcfe5c7708175a631c75b8853.jpg'
   }
 
   const saveUserToDB = async (user:CreateUserInput) => {
