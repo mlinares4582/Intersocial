@@ -24,7 +24,6 @@ const ProfilePicture = ({image, size = 40}: ProfilePictureProps) =>(
         style={{width: size, 
                 height: size, 
                 borderRadius:size,
-                
             }} 
         />
 )

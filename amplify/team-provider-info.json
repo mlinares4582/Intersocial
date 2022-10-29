@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-instersocial-dev-30213-authRole",
+      "UnauthRoleArn": "arn:aws:iam::239451805807:role/amplify-instersocial-dev-30213-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::239451805807:role/amplify-instersocial-dev-30213-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-instersocial-dev-30213-deployment",
+      "UnauthRoleName": "amplify-instersocial-dev-30213-unauthRole",
+      "StackName": "amplify-instersocial-dev-30213",
+      "StackId": "arn:aws:cloudformation:us-east-1:239451805807:stack/amplify-instersocial-dev-30213/9e8a52f0-5757-11ed-b994-0e40f5ee4e7d",
+      "AmplifyAppId": "d32dxp1c3w6c2m"
+    },
+    "categories": {
+      "auth": {
+        "instersocialbb0435e2": {}
+      }
+    }
+  }
+}
