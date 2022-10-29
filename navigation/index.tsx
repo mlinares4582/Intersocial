@@ -22,6 +22,7 @@ import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../typ
 import LinkingConfiguration from './LinkingConfiguration';
 import ProfilePicture from '../components/ProfilePicture';
 import styles from '../components/TimelineFeed/styles';
+import NewPostScreen from '../screens/NewPostScreen';
 
 
 
@@ -44,9 +45,8 @@ const HomeStack = createNativeStackNavigator<RootTabParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }}
-        
-      />
+      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }}/>
+      <Stack.Screen name="NewPost" component={NewPostScreen}/>
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Settings" component={SettingsTab} />

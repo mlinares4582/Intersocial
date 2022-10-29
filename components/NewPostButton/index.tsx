@@ -2,12 +2,15 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import styles from './styles'
+import { useNavigation } from '@react-navigation/native';
 
   
 const NewPostButton = () => {
 
+    const navigation = useNavigation();
+
     const onPress = () => {
-        console.warn('Open new post');
+        navigation.navigate('NewPost');
     }
 
 
