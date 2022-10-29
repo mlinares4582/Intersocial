@@ -21,7 +21,7 @@ import TutorsTab from '../screens/TutorsTab';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import ProfilePicture from '../components/ProfilePicture'; //profile picture 
-import NewPostScreen from '../screens/NewPostScreen';
+import NewPostScreen from '../screens/NewGroupPostScreen';
 
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
