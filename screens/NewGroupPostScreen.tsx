@@ -2,7 +2,7 @@ import { StyleSheet, TouchableOpacity, SafeAreaView, TextInput} from 'react-nati
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import GroupFeed from '../components/GroupFeed';
-//import posts from '../GroupData/GroupPost';
+// import posts from '../GroupData/GroupPost';
 import GroupButton from '../components/GroupButton';
 import { AntDesign } from '@expo/vector-icons';
 import React, { useState } from 'react';
