@@ -11,7 +11,9 @@ export type MainContianerProps = {
 
 }
 
-const MainContianer = ({ post }: MainContianerProps) => (
+const MainContianer = ({ post }: MainContianerProps) => {
+
+    return (
     <View style={styles.container}>
         <View style={styles.postHeaderContainer}>
             <View style={styles.postHeaderName}>
@@ -28,6 +30,7 @@ const MainContianer = ({ post }: MainContianerProps) => (
 
         <Footer post={post}/>
     </View>
-) 
+    )
+} 
 
 export default MainContianer;

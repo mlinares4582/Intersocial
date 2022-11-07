@@ -9,11 +9,14 @@ export type LeftContianerProps = {
 
 }
 
-const LeftContianer = ({ user }: LeftContianerProps) => (
+const LeftContianer = ({ user }: LeftContianerProps) => {
+
+    return(
     <View>
         < ProfilePicture image={user.image} size={55}/>
     </View>
-
-) 
+    )
+}
 
 export default LeftContianer;
+// 

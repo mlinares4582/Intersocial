@@ -1,10 +1,7 @@
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
 import Feed from '../components/Feed';
-import postFeed from '../data/timelinePost';
 import React from 'react';
 import NewPostButton from '../components/NewPostButton';
 

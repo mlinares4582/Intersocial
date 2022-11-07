@@ -11,14 +11,15 @@ export type TimelineFeedProps = {
 
 }
 
-const TimelineFeed = ({ post }: TimelineFeedProps) => (
+const TimelineFeed = ({ post }: TimelineFeedProps) => {
+
+return(
     <View style={styles.container}>
         <LeftContianer user={post.user}/>
         <MainContianer post={post}/>
         
     </View>
-
-
-) 
+    )
+}
 
 export default TimelineFeed;

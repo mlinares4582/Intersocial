@@ -45,6 +45,7 @@ Amplify.configure(awsconfig)
             image: getRandomImage(),
             name:userInfo.name
           }
+          console.log(user);
           await saveUserToDB(user);
         }else {
           console.log('user already exists')

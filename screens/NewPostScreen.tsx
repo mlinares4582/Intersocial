@@ -4,6 +4,9 @@ import { AntDesign } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 import React, { useState } from 'react';
 import ProfilePicture from '../components/ProfilePicture';
+import {API, Auth, graphqlOperation} from 'aws-amplify'
+import { createPost } from '../graphql/mutations';
+import { useNavigation } from '@react-navigation/native';
 
 
 // export default function FeedTab({ navigation }: RootTabScreenProps<'Feed'>) {
@@ -12,16 +15,35 @@ export default function NewPostScreen() {
 const [post ,setPost] = useState("")
 const [imageUrl ,setImageUrl] = useState("")
 
-const onPressPost = () => {
-    console.log(`Posting: ${post}
-    Image: ${imageUrl}`);
+const navigation = useNavigation();
+
+const onPressPost = async () => {
+    try{
+
+        const currentUser = await Auth.currentAuthenticatedUser({bypassCache: true})
+
+        const newPost = {
+            content: post,
+            image:imageUrl,
+            userID: currentUser.attributes.sub
+
+        }
+        await API.graphql(graphqlOperation(createPost, {input: newPost}))
+        navigation.goBack();
+
+    }catch(e) {
+        console.log(e) 
+    }
+
 }
 return (
     <SafeAreaView style={styles.container}>
         <View style={styles.headerContianer}>
-            <AntDesign name={'closecircleo'} size={25} color={Colors.light.tint}/>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+                <AntDesign name={'closecircleo'} size={25} color={Colors.light.tint}/>
+            </TouchableOpacity>
             <TouchableOpacity style={styles.button} onPress={onPressPost}>
-            <Text style={styles.buttonText}>Post</Text>
+                <Text style={styles.buttonText}>Post</Text>
             </TouchableOpacity>
         </View>
         <View style={styles.newPostContainer}>

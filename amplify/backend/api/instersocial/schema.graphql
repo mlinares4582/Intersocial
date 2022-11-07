@@ -7,14 +7,14 @@ type User @model {
   username: String!
   name: String!
   email: String!
-  image: String!
+  image: String
   posts: [Post] @hasMany
 }
 
 type Post @model {
   id: ID!
   content: String!
-  image: String!
+  image: String
   userID:ID!
   user: User @belongsTo
   comments: [Comment] @hasMany
