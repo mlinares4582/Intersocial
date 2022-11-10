@@ -8,7 +8,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { ColorSchemeName, Pressable, View } from 'react-native';
+import { ColorSchemeName, Pressable, TouchableOpacity, View } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -23,6 +23,8 @@ import LinkingConfiguration from './LinkingConfiguration';
 import ProfilePicture from '../components/ProfilePicture';
 import NewPostScreen from '../screens/NewPostScreen';
 import NewGroupPostScreen from '../screens/NewGroupPostScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+import { useNavigation } from '@react-navigation/native';
 
 
 
@@ -51,6 +53,7 @@ function RootNavigator() {
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Settings" component={SettingsTab} />
+        <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -64,7 +67,7 @@ const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
   const colorScheme = useColorScheme();
-
+  const navigation = useNavigation();
   return (
     <BottomTab.Navigator
       initialRouteName="Feed"
@@ -105,8 +108,9 @@ function BottomTabNavigator() {
                   
           },
           headerLeft: () => (
-            // <ProfilePicture size={40} image={'instersocial\Photos\logo_inter-removebg-preview.png'}/>
-            <ProfilePicture  size={40} image={'https://img.wattpad.com/d140fc81f50580bbbdff75a8bacfe234d926bfa0/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f70554e59615a336c772d796d6c513d3d2d3838363835393831342e313630666262663161636666343836383330333737383834363434382e6a7067?s=fit&w=720&h=720'}/>
+            <TouchableOpacity onPress={() =>  navigation.navigate('Profile')}>
+              <ProfilePicture  size={40} image={'https://img.wattpad.com/d140fc81f50580bbbdff75a8bacfe234d926bfa0/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f70554e59615a336c772d796d6c513d3d2d3838363835393831342e313630666262663161636666343836383330333737383834363434382e6a7067?s=fit&w=720&h=720'}/>
+            </TouchableOpacity>
           ),
           })}
       />
@@ -152,8 +156,11 @@ function BottomTabNavigator() {
             marginLeft: 15,
                   
           },
+          
           headerLeft: () => (
-            <ProfilePicture size={40} image={'https://avatarfiles.alphacoders.com/277/thumb-277051.png'}/>
+            <TouchableOpacity onPress={() =>  navigation.navigate('Profile')}>
+              <ProfilePicture size={40} image={'https://avatarfiles.alphacoders.com/277/thumb-277051.png'}/>
+            </TouchableOpacity>
           ),
           
 

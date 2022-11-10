@@ -1,10 +1,9 @@
 import React from 'react';
-import { StyleSheet,  Text, View, Dimensions, Image, FlatList } from 'react-native';
-import Colors from '../../constants/Colors';
+import { StyleSheet,  Text, View, Dimensions, Image } from 'react-native';
 import IconLabel from './IconLabel';
 
 
-const TutorsCard = ({info}) => {
+const TutorsCard = ({info}: any) => {
     
     const {name, courses, email, availability, classroom, image, id} = info
 

@@ -19,6 +19,7 @@ export type RootStackParamList = {
   NewGroupPost:undefined;
   Settings: undefined;
   NotFound: undefined;
+  Profile: undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> = NativeStackScreenProps<
