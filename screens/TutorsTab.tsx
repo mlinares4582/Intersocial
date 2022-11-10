@@ -1,14 +1,27 @@
-import { StyleSheet } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, Dimensions, Image, FlatList } from 'react-native';
+
+
 
 import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
+
+import HeaderContainer from '../components/TutorsFeed/HeaderContainer';
+import Card from '../components/TutorsFeed/TutorsCard';
+import {  View } from '../components/Themed';
 
 export default function TutorsTab() {
 return (
     <View style={styles.container}>
-    <Text style={styles.title}>Tutors</Text>
-    <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-    <EditScreenInfo path="/screens/TutorsTab.tsx" />
+        {/* <Card  /> */}
+        <StatusBar style="auto" />
+
+        <FlatList data = {tutors} 
+        renderItem={({item}) => {
+            return <Card info={item} />
+        }}
+        keyExtractor={(tutors) => tutors.id.toString()}
+        showsVerticalScrollIndicator={false}  />
     </View>
 );
 }
@@ -17,15 +30,49 @@ const styles = StyleSheet.create({
 container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'white',
+    
+    //justifyContent: 'center',
+    
 },
-title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-},
-separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-},
+
 });
+
+
+const tutors = [
+    {
+        name: 'Jonathan Linares',
+        courses: 'Calculus I & II',
+        email: 'jonathanlinares85@gmail.com',
+        availability: '8:00am - 5:00pm',
+        classroom: 'Classroom: G123',
+        image: require('../assets/images/meChicago3.jpg'),
+        id: 1,
+    },
+    {
+        name: 'Michael Linares',
+        courses: 'AWS CDK & React NAtive',
+        email: 'mglinares.2419@gmail.com',
+        availability: '9:00am - 1:00pm',
+        classroom: 'Classroom: F122',
+        image: require('../assets/images/default.jpg'),
+        id: 2,
+    },
+    {
+        name: 'Jose Alicea',
+        courses: 'Java',
+        email: 'joseraul2015@hotmail.com',
+        availability: '9:00am - 6:00pm',
+        classroom: 'Classroom: F122',
+        image: require('../assets/images/default.jpg'),
+        id:3
+    },{
+        name: 'Michael Linares',
+        courses: 'AWS CDK & React NAtive',
+        email: 'mglinares.2419@gmail.com',
+        availability: '9:00am - 1:00pm',
+        classroom: 'Classroom: F122',
+        image: require('../assets/images/default.jpg'),
+        id: 4,
+    },
+]
