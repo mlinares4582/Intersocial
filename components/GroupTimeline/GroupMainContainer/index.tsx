@@ -34,5 +34,3 @@ const GroupMainContainer  = ({ post }:GrouMainContainerProps ) => (
 export default GroupMainContainer;
 
 
-
-// {!! post.image && <Image style={styles.image} source={{ uri: post.image }} />}

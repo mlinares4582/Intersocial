@@ -1,4 +1,3 @@
-import { NumericLiteral } from '@babel/types';
 import React from 'react';
 import { View } from 'react-native';
 import GroupLeftContainer from './GroupLeftContainer';

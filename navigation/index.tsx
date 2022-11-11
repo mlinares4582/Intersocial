@@ -71,9 +71,21 @@ function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="Feed"
+    //   screenOptions={{
+    //     activeTintColor: '#fff',
+    //     inactiveTintColor: 'lightgray',
+    //     activeBackgroundColor: '#c4461c',
+    //     inactiveBackgroundColor: '#b55031',
+    //         style: {
+    //               backgroundColor: '#CE4418',
+    //               paddingBottom: 3
+    //         }
+    //  }}
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
-      }}>
+        
+      }}
+      >
       <BottomTab.Screen
         name="Feed"
         component={FeedTab}

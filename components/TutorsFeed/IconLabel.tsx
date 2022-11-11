@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet,  Text, View  } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-const IconLabel = ({name, label, color}) => {
+const IconLabel = ({name, label, color}: any) => {
     return (
         <View style={styles.container}>
             <Ionicons 
