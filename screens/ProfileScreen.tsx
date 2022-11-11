@@ -52,7 +52,7 @@ const ProfileScreen = () => {
             </View>
             <View style={styles.row}>
                 <Ionicons name="phone-portrait-outline" color='green' size={20} />
-                <Text style={{color: 'grey', marginLeft:20, }}>Toa Baja, Puerto Rico</Text>
+                <Text style={{color: 'grey', marginLeft:20, }}>787-568-9649</Text>
             </View>
       </View>
 
@@ -62,7 +62,7 @@ const ProfileScreen = () => {
             borderRightWidth:1,
         }]}>
             <Title>35</Title>
-            <Caption>Colleges</Caption>
+            <Caption> Colleagues </Caption>
         </View>
         <View style={styles.infoBox}>
             <Title>10</Title>
@@ -145,6 +145,7 @@ const styles = StyleSheet.create({
         width: '50%',
         alignItems: 'center',
         justifyContent: 'center',
+    
     },
     menuWrapper: {
         marginTop: 10,
@@ -160,5 +161,10 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         fontSize: 16,
         lineHeight: 26,
+    },
+    infoBoxColleagues: {
+        width: '50%',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 });
