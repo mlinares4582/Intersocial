@@ -26,6 +26,7 @@ import NewGroupPostScreen from '../screens/NewGroupPostScreen';
 import { useEffect, useState } from 'react';
 import {API, Auth, graphqlOperation} from 'aws-amplify'
 import { getUser } from '../graphql/queries';
+import { useNavigation } from '@react-navigation/native';
 
 
 
@@ -66,8 +67,10 @@ function RootNavigator() {
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
+  const navigation = useNavigation();
 
   const [user, setUser] = useState(null);
+  // console.log('USEEEER',user?.['image']);
 
   useEffect(() => {
     //get the current user
@@ -77,8 +80,8 @@ function BottomTabNavigator() {
         return;
       }
       try {
-        const userData = await API.graphql(graphqlOperation(getUser, {id: userInfo.attributes.sub}));
-        console.log(userData)
+        const userData = await API.graphql(graphqlOperation(getUser, {id: userInfo.attributes.sub}))
+        // console.log(userData)
         if (userData) {
 
           setUser(userData.data.getUser)

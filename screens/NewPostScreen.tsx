@@ -28,6 +28,7 @@ const onPressPost = async () => {
             userID: currentUser.attributes.sub
 
         }
+        console.log('NewPOOOOOST',newPost);
         await API.graphql(graphqlOperation(createPost, {input: newPost}))
         navigation.goBack();
 

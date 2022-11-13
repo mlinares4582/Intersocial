@@ -18,11 +18,11 @@ Amplify.configure(awsconfig)
   const colorScheme = useColorScheme();
 
   const getRandomImage = () => {
-    return 'https://i.pinimg.com/280x280_RS/58/bd/d2/58bdd26dcfe5c7708175a631c75b8853.jpg'
+    return 'https://i.pinimg.com/550x/bf/a5/3b/bfa53b2488eb224410ac1edfbecb2a34.jpg'
   }
 
   const saveUserToDB = async (user:CreateUserInput) => {
-    console.log(user)
+    console.log('USEEERMMMM',user)
     await API.graphql(graphqlOperation(createUser, { input: user }))
   }
 
@@ -45,7 +45,7 @@ Amplify.configure(awsconfig)
             image: getRandomImage(),
             name:userInfo.name
           }
-          console.log(user);
+          console.log('USEEERMMMM',user)
           await saveUserToDB(user);
         }else {
           console.log('user already exists')

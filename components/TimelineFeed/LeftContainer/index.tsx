@@ -10,6 +10,7 @@ export type LeftContianerProps = {
 }
 
 const LeftContianer = ({ user }: LeftContianerProps) => {
+    console.log('userrrr',user.image)
 
     return(
     <View>
