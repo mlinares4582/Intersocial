@@ -43,7 +43,7 @@ Amplify.configure(awsconfig)
             username: userInfo.username,
             email: userInfo.attributes.email,
             image: getRandomImage(),
-            name:userInfo.name
+            name:userInfo.username
           }
           console.log('USEEERMMMM',user)
           await saveUserToDB(user);

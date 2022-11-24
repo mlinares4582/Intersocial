@@ -12,13 +12,13 @@ export type MainContianerProps = {
 }
 
 const MainContianer = ({ post }: MainContianerProps) => {
-
+    console.log("POOOST USERRR NAME",post)
     return (
     <View style={styles.container}>
         <View style={styles.postHeaderContainer}>
             <View style={styles.postHeaderName}>
-                <Text style={styles.name}>{post.user.name}</Text>
-                <Text style={styles.username}>@{post.user.username}</Text>
+                <Text style={styles.name}></Text>
+                <Text style={styles.username}>@</Text>
                 <Text style={styles.createdAt}>{moment(post.createdAt).fromNow()}</Text>  
             </View> 
             <Ionicons name={"chevron-down"} style={styles.chevronIcon} size={16} />
@@ -34,3 +34,8 @@ const MainContianer = ({ post }: MainContianerProps) => {
 } 
 
 export default MainContianer;
+//{post.user.name}
+//{post.user.username}
+//
+//
+//

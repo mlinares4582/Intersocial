@@ -34,18 +34,18 @@ export type RootTabParamList = {
 };
 
 export type UserType = {
-  id: string,
-  name: string,
-  username: string,
+  id?: string,
+  name?: string,
+  username?: string,
   image?: string,
 }
 
 
 export type PostType = {
-  id: string,
-  createdAt: string,
-  user: UserType,
-  content: string,
+  id?: string,
+  createdAt?: string,
+  user?: UserType,
+  content?: string,
   image?: string,
   numberOfComments?: number,
   numberOfLikes?: number,

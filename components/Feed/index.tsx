@@ -18,13 +18,9 @@ const Feed = () => {
     //     //Get posts from backend and set them to state
     //     setLoading(true);
         try{
-            const postsData = await API.graphql(graphqlOperation(listPosts));
-            // console.log(postsData.data.listPosts);
-    //         console.log(postsData.data.listPosts.items)
-            if(!postsData.data.listPosts.items)
-            setPostFeed(postsData.data.listPosts.items)
-            console.log("postFEEEED",postsData.data.listPosts.items);
-           
+            const postsData = await API.graphql(graphqlOperation(listPosts));   
+            if(postsData.data.listPosts.items !== null)
+                setPostFeed(postsData.data.listPosts.items)
         }catch(e){
             console.log(e);
         }//finally {

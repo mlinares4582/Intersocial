@@ -10,14 +10,14 @@ export type LeftContianerProps = {
 }
 
 const LeftContianer = ({ user }: LeftContianerProps) => {
-    console.log('userrrr',user.image)
+    // console.log('userrrr',user.image)
 
     return(
     <View>
-        < ProfilePicture image={user.image} size={55}/>
+        < ProfilePicture  image={user.image} size={55}/>
     </View>
     )
 }
 
 export default LeftContianer;
-// 
+// image={user.image}
