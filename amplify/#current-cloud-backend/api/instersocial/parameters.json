@@ -1,0 +1,6 @@
+{
+  "AppSyncApiName": "instersocial",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2022-11-16T06:09:14.051Z"
+}

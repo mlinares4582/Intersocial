@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "instersocial",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "S3DeploymentBucket": "amplify-instersocial-dev-30213-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/0709516795913ec222edfb6ad974eedf1845eebf"
+}

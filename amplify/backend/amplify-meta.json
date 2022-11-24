@@ -1,0 +1,85 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-instersocial-dev-30213-authRole",
+      "UnauthRoleArn": "arn:aws:iam::239451805807:role/amplify-instersocial-dev-30213-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::239451805807:role/amplify-instersocial-dev-30213-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-instersocial-dev-30213-deployment",
+      "UnauthRoleName": "amplify-instersocial-dev-30213-unauthRole",
+      "StackName": "amplify-instersocial-dev-30213",
+      "StackId": "arn:aws:cloudformation:us-east-1:239451805807:stack/amplify-instersocial-dev-30213/9e8a52f0-5757-11ed-b994-0e40f5ee4e7d",
+      "AmplifyAppId": "d32dxp1c3w6c2m"
+    }
+  },
+  "auth": {
+    "instersocialbb0435e2": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-instersocial-dev-30213-deployment/amplify-cfn-templates/auth/instersocialbb0435e2-cloudformation-template.json",
+        "logicalId": "authinstersocialbb0435e2"
+      },
+      "lastPushTimeStamp": "2022-11-16T06:13:50.380Z",
+      "output": {
+        "UserPoolId": "us-east-1_DMNC3dSYF",
+        "AppClientIDWeb": "1i4pffb37uhutvr52bbmjne9nd",
+        "AppClientID": "4c5rihgpe4pimrq3vcss0qdu49",
+        "IdentityPoolId": "us-east-1:979b8ae4-bced-4a1c-9ada-8b1c6e9fedf3",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:239451805807:userpool/us-east-1_DMNC3dSYF",
+        "IdentityPoolName": "instersocialbb0435e2_identitypool_bb0435e2__dev",
+        "UserPoolName": "instersocialbb0435e2_userpool_bb0435e2"
+      },
+      "lastPushDirHash": "DI0HVfDFbWMNmfGYtVg3V+D0cIk="
+    }
+  },
+  "api": {
+    "instersocial": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "apiKeyExpirationDate": "2023-11-16T06:09:09.267Z",
+              "description": "instersocial"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "d7rz4wjvnfd6fllwb3mknkziu4",
+        "GraphQLAPIEndpointOutput": "https://tryuls7l4bd5dcs33dezw74zpi.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-zfvm5pbkgrebfoy4yjab2jjy3e"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-instersocial-dev-30213-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiinstersocial"
+      },
+      "lastPushTimeStamp": "2022-11-16T06:13:50.734Z",
+      "lastPushDirHash": "rliYRrEOoGF8yuJ46rGR9wk2Q40="
+    }
+  }
+}
