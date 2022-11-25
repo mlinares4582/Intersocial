@@ -9,6 +9,7 @@ import GroupButton from '../components/GroupButton';
 import React from 'react';
 
 
+
 export default function GroupsTab() {
 return (
     <View style={styles.container}>
@@ -23,6 +24,7 @@ container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingVertical: 50,
 },
 
 });
