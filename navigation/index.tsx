@@ -7,9 +7,10 @@ import { FontAwesome, AntDesign,Ionicons, Foundation } from '@expo/vector-icons'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import * as React from 'react';
-import { ColorSchemeName, Pressable, TouchableOpacity, View } from 'react-native';
 
+import * as React from 'react';
+import { ColorSchemeName, Pressable, TouchableOpacity, View , Image} from 'react-native';
+// import { BlurView } from 'expo-blur';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import SettingsTab from '../screens/SettingsTab';
@@ -71,20 +72,15 @@ function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="Feed"
-    //   screenOptions={{
-    //     activeTintColor: '#fff',
-    //     inactiveTintColor: 'lightgray',
-    //     activeBackgroundColor: '#c4461c',
-    //     inactiveBackgroundColor: '#b55031',
-    //         style: {
-    //               backgroundColor: '#CE4418',
-    //               paddingBottom: 3
-    //         }
-    //  }}
+      
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
-        
+        // tabBarBackground: () => (
+        //   <BlurView tint="light" intensity={100}  />
+        // ),
       }}
+
+
       >
       <BottomTab.Screen
         name="Feed"
@@ -93,7 +89,9 @@ function BottomTabNavigator() {
   
           tabBarIcon: ({ color }) => <TabBarIcon name="feed" color={color} />,
           headerTitle: () => (
-            <Foundation style={{ alignItems: 'center' }} name={"social-skillshare"} size={40}  color={Colors.light.tint}/>
+            // <Foundation style={{ alignItems: 'center' }} name={"social-skillshare"} size={40}  color={Colors.light.tint}/>
+            <Image source={require("../Photos/logo_inter.png")} 
+            style={{width:40, height:40}} />
           ),
           headerTitleAlign: 'center',
           headerStyle: {
@@ -133,7 +131,9 @@ function BottomTabNavigator() {
           title: 'Chat',
           tabBarIcon: ({ color }) => <TabBarIcon name="wechat" color={color} />,
           headerTitle: () => (
-            <Foundation name={"social-skillshare"} size={40}  color={Colors.light.tint}/>
+            <Image source={require("../Photos/logo_inter.png")} 
+            style={{width:40, height:40}} />
+            // <Foundation name={"social-skillshare"} size={40}  color={Colors.light.tint}/>
           ),
           headerTitleAlign: 'center',
           
@@ -146,7 +146,9 @@ function BottomTabNavigator() {
           title: 'Groups',
           tabBarIcon: ({ color }) => <TabBarIcon name="group" color={color} />,
           headerTitle: () => (
-            <Foundation name={"social-skillshare"} size={40}  color={Colors.light.tint}/>
+            // <Foundation name={"social-skillshare"} size={40}  color={Colors.light.tint}/>
+            <Image source={require("../Photos/logo_inter.png")} 
+            style={{width:40, height:40}} />
           ),
           headerTitleAlign: 'center',
 
@@ -190,7 +192,9 @@ function BottomTabNavigator() {
           title: 'Tutors',
           tabBarIcon: ({ color }) => <TabBarIcon name="id-card" color={color} />,
           headerTitle: () => (
-            <Foundation name={"social-skillshare"} size={40}  color={Colors.light.tint}/>
+            // <Foundation name={"social-skillshare"} size={40}  color={Colors.light.tint}/>
+            <Image source={require("../Photos/logo_inter.png")} 
+            style={{width:40, height:40}} />
           ),
           headerTitleAlign: 'center',
         }}

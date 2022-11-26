@@ -7,7 +7,6 @@ import {
     Caption,
     TouchableRipple,
 } from 'react-native-paper';
-import GroupPost from '../GroupData/GroupPost'
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
