@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { View, StyleSheet, TextInput, Text } from 'react-native'
-import {AntDesign , MaterialIcons} from '@expo/vector-icons';
+import {AntDesign , MaterialIcons, FontAwesome} from '@expo/vector-icons';
 
 const InputBox = () => {
 
@@ -16,13 +16,13 @@ const InputBox = () => {
   return (
     <View style= {styles.container}>
         {/* Icon */}
-        <AntDesign name= 'plus' size={24} color='royalblue' />
+        <AntDesign name= 'plus' size={24} color='green' />
 
         {/* Text Input */}
         <TextInput  value={newMessage} onChangeText={setNewMessage} style= {styles.input} placeholder="Input your message..." />
 
         {/* Icon */}
-        <MaterialIcons onPress={onSend} style= {styles.send} name="send" size={24} color='white' />
+        <FontAwesome onPress={onSend} style= {styles.send} name="send-o" size={24} color='white' />
 
     </View>
   )
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     send: {
         backgroundColor: 'green',
         padding: 7,
-        borderRadius: 15,
+        borderRadius: 19,
         overflow: 'hidden',
     },
 })

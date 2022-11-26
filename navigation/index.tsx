@@ -25,14 +25,18 @@ import NewPostScreen from '../screens/NewPostScreen';
 import NewGroupPostScreen from '../screens/NewGroupPostScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import { useNavigation } from '@react-navigation/native';
+import ChatScreen from '../screens/ChatScreen';
+import ChatsScreen from '../screens/ChatsScreen';
 
 
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
     <NavigationContainer
+    
       linking={LinkingConfiguration}
       theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+       
       <RootNavigator />
     </NavigationContainer>
   );
@@ -50,10 +54,13 @@ function RootNavigator() {
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }}/>
       <Stack.Screen name="NewPost" component={NewPostScreen} options={{headerShown:false}}/>
       <Stack.Screen name="NewGroupPost" component={NewGroupPostScreen} options={{headerShown:false}}/>
+      <Stack.Screen name="Chats" component={ChatsScreen}  />
+      
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Settings" component={SettingsTab} />
         <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Chat" component={ChatScreen}  />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -127,7 +134,7 @@ function BottomTabNavigator() {
           })}
       />
       <BottomTab.Screen
-        name="Chat"
+        name="Chatss"
         component={ChatTab}
         options={{
           title: 'Chat',

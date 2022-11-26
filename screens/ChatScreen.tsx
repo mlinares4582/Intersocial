@@ -1,6 +1,6 @@
 import { View, Text, ImageBackground, StyleSheet, FlatList, KeyboardAvoidingView, Platform } from 'react-native'
 import React from 'react'
-import bg from '../assets/images/bg.png';
+import bg from '../assets/images/bg2.jpg';
 import Message from '../components/Message'
 import messages from '../assets/chatData/messages.json'
 import InputBox from '../components/InputBox'

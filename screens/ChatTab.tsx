@@ -6,13 +6,17 @@ import { Text, View } from '../components/Themed';
 import ChatListItem from '../components/ChatListItem';
 import ChatsScreen from './ChatsScreen';
 import ChatScreen from './ChatScreen';
+import { NavigationContainer } from '@react-navigation/native';
+
 
 
 
 export default function ChatTab() {
   return (
     <View style={styles.container}>
-     <ChatScreen />
+      
+        <ChatsScreen/>
+        {/* <ChatScreen/>      */}
     </View>
   );
 }

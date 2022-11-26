@@ -20,6 +20,9 @@ export type RootStackParamList = {
   Settings: undefined;
   NotFound: undefined;
   Profile: undefined;
+  Chats: undefined;
+  Chat: undefined;
+
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> = NativeStackScreenProps<
@@ -29,7 +32,7 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> = Nati
 
 export type RootTabParamList = {
   Feed: undefined;
-  Chat: undefined;
+  Chatss: undefined;
   Groups: undefined;
   Tutors: undefined;
 };
