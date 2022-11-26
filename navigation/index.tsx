@@ -26,6 +26,9 @@ import NewPostScreen from '../screens/NewPostScreen';
 import NewGroupPostScreen from '../screens/NewGroupPostScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import { useNavigation } from '@react-navigation/native';
+import { useEffect, useState } from 'react';
+import { Amplify, Auth, API, graphqlOperation } from 'aws-amplify';
+import { getUser} from '../graphql/queries'
 
 
 
@@ -39,10 +42,6 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
   );
 }
 
-/**
- * A root stack navigator is often used for displaying modals on top of all other content.
- * https://reactnavigation.org/docs/modal
- */
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const HomeStack = createNativeStackNavigator<RootTabParamList>();
 function RootNavigator() {
@@ -60,13 +59,37 @@ function RootNavigator() {
   );
 }
 
-/**
- * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
- * https://reactnavigation.org/docs/bottom-tab-navigator
- */
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
+
+  const [user, setUser] = useState(null)
+
+
+  useEffect(() => {
+    //get the current user
+    const fetchUser = async () => {
+      const userInfo = await Auth.currentAuthenticatedUser({ bypassCache: true})
+      if(!userInfo) {
+        return;
+      }
+      try {
+        const userData = await API.graphql(graphqlOperation(getUser, {id: userInfo.attributes.sub}))
+        if (userData) {
+          setUser(userData.data.getUser);
+          console.log("SETUSER", userData.data.getUser)
+        }
+      }catch (e) {
+        console.log("ERROR",e);
+      }
+    }
+
+    fetchUser()
+  }, [])
+
+
+
+  /////////////////////////////////
   const colorScheme = useColorScheme();
   const navigation = useNavigation();
   return (
@@ -119,7 +142,7 @@ function BottomTabNavigator() {
           },
           headerLeft: () => (
             <TouchableOpacity onPress={() =>  navigation.navigate('Profile')}>
-              <ProfilePicture  size={40} image={'https://img.wattpad.com/d140fc81f50580bbbdff75a8bacfe234d926bfa0/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f70554e59615a336c772d796d6c513d3d2d3838363835393831342e313630666262663161636666343836383330333737383834363434382e6a7067?s=fit&w=720&h=720'}/>
+              <ProfilePicture  size={40} image={user?.["image"]}/>
             </TouchableOpacity>
           ),
           })}
