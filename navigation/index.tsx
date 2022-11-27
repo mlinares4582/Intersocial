@@ -77,6 +77,7 @@ function BottomTabNavigator() {
   const navigation = useNavigation();
   return (
     <BottomTab.Navigator
+      
       initialRouteName="Feed"
     //   screenOptions={{
     //     activeTintColor: '#fff',
@@ -183,13 +184,10 @@ function BottomTabNavigator() {
           ),
           
 
-
-
-
-
-          
         }}
       />
+
+
       <BottomTab.Screen
         name="Tutors"
         component={TutorsTab}
