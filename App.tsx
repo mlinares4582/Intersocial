@@ -6,7 +6,6 @@ import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 import { Amplify, Auth, API, graphqlOperation } from 'aws-amplify';
 import awsconfig from './src/aws-exports';
-Amplify.configure(awsconfig);
 import { withAuthenticator } from 'aws-amplify-react-native';
 import {getUser} from './graphql/queries';
 import {createUser} from './graphql/mutations';
@@ -75,3 +74,4 @@ import { CreateUserInput } from './API';
 }
 
 export default withAuthenticator(App);
+// export default App;

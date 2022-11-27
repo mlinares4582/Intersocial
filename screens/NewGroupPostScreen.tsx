@@ -100,7 +100,7 @@ return (
                 <Text style= {styles.buttonText}>Post</Text>
             </TouchableOpacity>
         </View>
-        
+
         <View style={styles.NewPostContainer}>
             <ProfilePicture image={'https://avatarfiles.alphacoders.com/277/thumb-277051.png'}/>
             <View style={styles.inputContainer}>
@@ -112,12 +112,6 @@ return (
                 style={styles.PostInput}
                 placeholder="What's new?"
             />
-                {/* <TextInput
-                value={imageUrl}
-                onChangeText={(value) => setImageUrl(value)}
-                style={styles.imageInput}
-                placeholder="Image url (optional)"
-            /> */}
 
             <TouchableOpacity onPress={pickImage}>
                     <Text style={styles.pickImage}>Pick an Image</Text>
