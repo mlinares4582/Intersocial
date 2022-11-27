@@ -114,6 +114,7 @@ export const createPost = /* GraphQL */ `
       likes {
         items {
           id
+          userID
           postID
           createdAt
           updatedAt
@@ -155,6 +156,7 @@ export const updatePost = /* GraphQL */ `
       likes {
         items {
           id
+          userID
           postID
           createdAt
           updatedAt
@@ -196,6 +198,7 @@ export const deletePost = /* GraphQL */ `
       likes {
         items {
           id
+          userID
           postID
           createdAt
           updatedAt
@@ -219,6 +222,7 @@ export const createLike = /* GraphQL */ `
   ) {
     createLike(input: $input, condition: $condition) {
       id
+      userID
       postID
       user {
         id
@@ -269,6 +273,7 @@ export const updateLike = /* GraphQL */ `
   ) {
     updateLike(input: $input, condition: $condition) {
       id
+      userID
       postID
       user {
         id
@@ -319,6 +324,7 @@ export const deleteLike = /* GraphQL */ `
   ) {
     deleteLike(input: $input, condition: $condition) {
       id
+      userID
       postID
       user {
         id

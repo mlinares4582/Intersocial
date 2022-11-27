@@ -1,12 +1,16 @@
-import { StyleSheet, TouchableOpacity,SafeAreaView,TextInput } from 'react-native';
+import { StyleSheet, TouchableOpacity,SafeAreaView,TextInput, Platform, Button,Image } from 'react-native';
 import { Text, View } from '../components/Themed';
 import { AntDesign } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProfilePicture from '../components/ProfilePicture';
-import { Amplify, Auth, API, graphqlOperation } from 'aws-amplify';
+import { Amplify, Auth, API, graphqlOperation, Storage } from 'aws-amplify';
 import { createPost} from '../graphql/mutations'
 import { useNavigation } from '@react-navigation/native';
+import * as ImagePicker from 'expo-image-picker';
+const { v4: uuidv4 } = require('uuid');
+import 'react-native-get-random-values';
+
 
 
 // export default function FeedTab({ navigation }: RootTabScreenProps<'Feed'>) {
@@ -17,14 +21,62 @@ const navigation = useNavigation()
 const [post ,setPost] = useState("")
 const [imageUrl ,setImageUrl] = useState("")
 
+
+
+const pickImage = async () => {
+    // No permissions request is necessary for launching the image library
+    let result = await ImagePicker.launchImageLibraryAsync({
+    mediaTypes: ImagePicker.MediaTypeOptions.All,
+    allowsEditing: true,
+    aspect: [4, 3],
+    quality: 1,
+    });
+
+    
+
+    if (!result.cancelled) {
+    setImageUrl(result.uri);
+    }
+    console.log(result);
+
+    
+};
+
+const uploadImage = async () => {
+    try {
+        const response = await fetch(imageUrl);
+        // console.log("RESSSPONSE",response)
+        const blob = await response.blob();
+        const urlParts = imageUrl.split('.');
+        const extension = urlParts[urlParts.length - 1];
+        // console.log("extension",extension)
+        const key =`${uuidv4()}.${extension}`;
+        // console.log("key",key);
+        await Storage.put(key, blob);
+
+        return key;
+        
+    } catch (error) {
+        console.log("eerr",error)
+    }
+    return '';
+
+}
+
 const onPressPost = async () => {
+    let image;
+    if(!!imageUrl) {
+        image = await uploadImage();
+    }
+    console.log(image);
+
     try {
 
         const currentUser = await Auth.currentAuthenticatedUser({bypassCache: true});
 
         const newPost ={
             content: post,
-            image:imageUrl,
+            image,
             userID: currentUser.attributes.sub
         }
         //POST REQUEST
@@ -55,12 +107,10 @@ return (
                     style={styles.postInput}
                     placeholder={"What's new?"}
                 />
-                <TextInput 
-                    value={imageUrl}
-                    onChangeText={(value) => setImageUrl(value)}
-                    style={styles.imageInput}
-                    placeholder={"Post image(optional)"}
-                />
+                <TouchableOpacity onPress={pickImage}>
+                    <Text style={styles.pickImage}>Pick an Image</Text>
+                </TouchableOpacity>
+                <Image source={{uri: imageUrl}} style={styles.image}/>
             </View>
         </View>
     </SafeAreaView>
@@ -108,9 +158,17 @@ postInput: {
     fontSize: 20
 
 },
-imageInput: {
-
+pickImage: {
+    fontSize: 15,
+    color: Colors.light.tint,
+    marginVertical: 10,
 },
+image: {
+    width: 300,
+    height: 200,
+    borderRadius: 30
+    
+}
 });
 
 //ME QUEDE EN 2:24:50 EN LO DEL STYLO DEL BOTON Y DEL HEADER

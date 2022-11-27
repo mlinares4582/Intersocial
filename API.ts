@@ -101,6 +101,7 @@ export type ModelLikeConnection = {
 export type Like = {
   __typename: "Like",
   id: string,
+  userID: string,
   postID: string,
   user: User,
   post: Post,
@@ -174,13 +175,15 @@ export type DeletePostInput = {
 
 export type CreateLikeInput = {
   id?: string | null,
+  userID: string,
   postID: string,
   postLikesId?: string | null,
-  likeUserId: string,
-  likePostId: string,
+  likeUserId?: string,
+  likePostId?: string,
 };
 
 export type ModelLikeConditionInput = {
+  userID?: ModelIDInput | null,
   postID?: ModelIDInput | null,
   and?: Array< ModelLikeConditionInput | null > | null,
   or?: Array< ModelLikeConditionInput | null > | null,
@@ -192,6 +195,7 @@ export type ModelLikeConditionInput = {
 
 export type UpdateLikeInput = {
   id: string,
+  userID?: string | null,
   postID?: string | null,
   postLikesId?: string | null,
   likeUserId: string,
@@ -239,6 +243,7 @@ export enum ModelSortDirection {
 
 export type ModelLikeFilterInput = {
   id?: ModelIDInput | null,
+  userID?: ModelIDInput | null,
   postID?: ModelIDInput | null,
   and?: Array< ModelLikeFilterInput | null > | null,
   or?: Array< ModelLikeFilterInput | null > | null,
@@ -299,6 +304,7 @@ export type ModelSubscriptionPostFilterInput = {
 
 export type ModelSubscriptionLikeFilterInput = {
   id?: ModelSubscriptionIDInput | null,
+  userID?: ModelSubscriptionIDInput | null,
   postID?: ModelSubscriptionIDInput | null,
   and?: Array< ModelSubscriptionLikeFilterInput | null > | null,
   or?: Array< ModelSubscriptionLikeFilterInput | null > | null,
@@ -434,6 +440,7 @@ export type CreatePostMutation = {
       items:  Array< {
         __typename: "Like",
         id: string,
+        userID: string,
         postID: string,
         createdAt: string,
         updatedAt: string,
@@ -481,6 +488,7 @@ export type UpdatePostMutation = {
       items:  Array< {
         __typename: "Like",
         id: string,
+        userID: string,
         postID: string,
         createdAt: string,
         updatedAt: string,
@@ -528,6 +536,7 @@ export type DeletePostMutation = {
       items:  Array< {
         __typename: "Like",
         id: string,
+        userID: string,
         postID: string,
         createdAt: string,
         updatedAt: string,
@@ -553,6 +562,7 @@ export type CreateLikeMutation = {
   createLike?:  {
     __typename: "Like",
     id: string,
+    userID: string,
     postID: string,
     user:  {
       __typename: "User",
@@ -610,6 +620,7 @@ export type UpdateLikeMutation = {
   updateLike?:  {
     __typename: "Like",
     id: string,
+    userID: string,
     postID: string,
     user:  {
       __typename: "User",
@@ -667,6 +678,7 @@ export type DeleteLikeMutation = {
   deleteLike?:  {
     __typename: "Like",
     id: string,
+    userID: string,
     postID: string,
     user:  {
       __typename: "User",
@@ -804,6 +816,7 @@ export type GetPostQuery = {
       items:  Array< {
         __typename: "Like",
         id: string,
+        userID: string,
         postID: string,
         createdAt: string,
         updatedAt: string,
@@ -900,6 +913,53 @@ export type PostsByContentQuery = {
   } | null,
 };
 
+export type LikesByUserIDQueryVariables = {
+  userID: string,
+  sortDirection?: ModelSortDirection | null,
+  filter?: ModelLikeFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type LikesByUserIDQuery = {
+  likesByUserID?:  {
+    __typename: "ModelLikeConnection",
+    items:  Array< {
+      __typename: "Like",
+      id: string,
+      userID: string,
+      postID: string,
+      user:  {
+        __typename: "User",
+        id: string,
+        username: string,
+        image: string,
+        email: string,
+        name: string,
+        createdAt: string,
+        updatedAt: string,
+      },
+      post:  {
+        __typename: "Post",
+        id: string,
+        content: string,
+        image?: string | null,
+        userID: string,
+        createdAt: string,
+        updatedAt: string,
+        userPostsId?: string | null,
+        postUserId?: string | null,
+      },
+      createdAt: string,
+      updatedAt: string,
+      postLikesId?: string | null,
+      likeUserId: string,
+      likePostId: string,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
 export type LikesByPostIDQueryVariables = {
   postID: string,
   sortDirection?: ModelSortDirection | null,
@@ -914,6 +974,7 @@ export type LikesByPostIDQuery = {
     items:  Array< {
       __typename: "Like",
       id: string,
+      userID: string,
       postID: string,
       user:  {
         __typename: "User",
@@ -1072,6 +1133,7 @@ export type OnCreatePostSubscription = {
       items:  Array< {
         __typename: "Like",
         id: string,
+        userID: string,
         postID: string,
         createdAt: string,
         updatedAt: string,
@@ -1118,6 +1180,7 @@ export type OnUpdatePostSubscription = {
       items:  Array< {
         __typename: "Like",
         id: string,
+        userID: string,
         postID: string,
         createdAt: string,
         updatedAt: string,
@@ -1164,6 +1227,7 @@ export type OnDeletePostSubscription = {
       items:  Array< {
         __typename: "Like",
         id: string,
+        userID: string,
         postID: string,
         createdAt: string,
         updatedAt: string,
@@ -1188,6 +1252,7 @@ export type OnCreateLikeSubscription = {
   onCreateLike?:  {
     __typename: "Like",
     id: string,
+    userID: string,
     postID: string,
     user:  {
       __typename: "User",
@@ -1244,6 +1309,7 @@ export type OnUpdateLikeSubscription = {
   onUpdateLike?:  {
     __typename: "Like",
     id: string,
+    userID: string,
     postID: string,
     user:  {
       __typename: "User",
@@ -1300,6 +1366,7 @@ export type OnDeleteLikeSubscription = {
   onDeleteLike?:  {
     __typename: "Like",
     id: string,
+    userID: string,
     postID: string,
     user:  {
       __typename: "User",

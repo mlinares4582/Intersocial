@@ -24,7 +24,9 @@ type Post @model {
 
 type Like @model(queries:null) {
   id: ID! @primaryKey 
+  userID: ID! @index
   postID: ID! @index
   user: User! @hasOne
   post: Post! @hasOne
 }
+

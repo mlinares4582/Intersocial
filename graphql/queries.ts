@@ -73,6 +73,7 @@ export const getPost = /* GraphQL */ `
       likes {
         items {
           id
+          userID
           postID
           createdAt
           updatedAt
@@ -171,6 +172,54 @@ export const postsByContent = /* GraphQL */ `
     }
   }
 `;
+export const likesByUserID = /* GraphQL */ `
+  query LikesByUserID(
+    $userID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelLikeFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    likesByUserID(
+      userID: $userID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        userID
+        postID
+        user {
+          id
+          username
+          image
+          email
+          name
+          createdAt
+          updatedAt
+        }
+        post {
+          id
+          content
+          image
+          userID
+          createdAt
+          updatedAt
+          userPostsId
+          postUserId
+        }
+        createdAt
+        updatedAt
+        postLikesId
+        likeUserId
+        likePostId
+      }
+      nextToken
+    }
+  }
+`;
 export const likesByPostID = /* GraphQL */ `
   query LikesByPostID(
     $postID: ID!
@@ -188,6 +237,7 @@ export const likesByPostID = /* GraphQL */ `
     ) {
       items {
         id
+        userID
         postID
         user {
           id

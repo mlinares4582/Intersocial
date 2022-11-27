@@ -102,6 +102,7 @@ export const onCreatePost = /* GraphQL */ `
       likes {
         items {
           id
+          userID
           postID
           createdAt
           updatedAt
@@ -140,6 +141,7 @@ export const onUpdatePost = /* GraphQL */ `
       likes {
         items {
           id
+          userID
           postID
           createdAt
           updatedAt
@@ -178,6 +180,7 @@ export const onDeletePost = /* GraphQL */ `
       likes {
         items {
           id
+          userID
           postID
           createdAt
           updatedAt
@@ -198,6 +201,7 @@ export const onCreateLike = /* GraphQL */ `
   subscription OnCreateLike($filter: ModelSubscriptionLikeFilterInput) {
     onCreateLike(filter: $filter) {
       id
+      userID
       postID
       user {
         id
@@ -245,6 +249,7 @@ export const onUpdateLike = /* GraphQL */ `
   subscription OnUpdateLike($filter: ModelSubscriptionLikeFilterInput) {
     onUpdateLike(filter: $filter) {
       id
+      userID
       postID
       user {
         id
@@ -292,6 +297,7 @@ export const onDeleteLike = /* GraphQL */ `
   subscription OnDeleteLike($filter: ModelSubscriptionLikeFilterInput) {
     onDeleteLike(filter: $filter) {
       id
+      userID
       postID
       user {
         id
