@@ -12,13 +12,14 @@ export const onCreateUser = /* GraphQL */ `
       name
       posts {
         items {
+          id
           content
           image
           userID
-          id
           createdAt
           updatedAt
           userPostsId
+          postUserId
         }
         nextToken
       }
@@ -37,13 +38,14 @@ export const onUpdateUser = /* GraphQL */ `
       name
       posts {
         items {
+          id
           content
           image
           userID
-          id
           createdAt
           updatedAt
           userPostsId
+          postUserId
         }
         nextToken
       }
@@ -62,13 +64,14 @@ export const onDeleteUser = /* GraphQL */ `
       name
       posts {
         items {
+          id
           content
           image
           userID
-          id
           createdAt
           updatedAt
           userPostsId
+          postUserId
         }
         nextToken
       }
@@ -80,6 +83,7 @@ export const onDeleteUser = /* GraphQL */ `
 export const onCreatePost = /* GraphQL */ `
   subscription OnCreatePost($filter: ModelSubscriptionPostFilterInput) {
     onCreatePost(filter: $filter) {
+      id
       content
       image
       userID
@@ -95,16 +99,29 @@ export const onCreatePost = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      id
+      likes {
+        items {
+          id
+          postID
+          createdAt
+          updatedAt
+          postLikesId
+          likeUserId
+          likePostId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       userPostsId
+      postUserId
     }
   }
 `;
 export const onUpdatePost = /* GraphQL */ `
   subscription OnUpdatePost($filter: ModelSubscriptionPostFilterInput) {
     onUpdatePost(filter: $filter) {
+      id
       content
       image
       userID
@@ -120,16 +137,29 @@ export const onUpdatePost = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      id
+      likes {
+        items {
+          id
+          postID
+          createdAt
+          updatedAt
+          postLikesId
+          likeUserId
+          likePostId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       userPostsId
+      postUserId
     }
   }
 `;
 export const onDeletePost = /* GraphQL */ `
   subscription OnDeletePost($filter: ModelSubscriptionPostFilterInput) {
     onDeletePost(filter: $filter) {
+      id
       content
       image
       userID
@@ -145,10 +175,163 @@ export const onDeletePost = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      id
+      likes {
+        items {
+          id
+          postID
+          createdAt
+          updatedAt
+          postLikesId
+          likeUserId
+          likePostId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       userPostsId
+      postUserId
+    }
+  }
+`;
+export const onCreateLike = /* GraphQL */ `
+  subscription OnCreateLike($filter: ModelSubscriptionLikeFilterInput) {
+    onCreateLike(filter: $filter) {
+      id
+      postID
+      user {
+        id
+        username
+        image
+        email
+        name
+        posts {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      post {
+        id
+        content
+        image
+        userID
+        user {
+          id
+          username
+          image
+          email
+          name
+          createdAt
+          updatedAt
+        }
+        likes {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userPostsId
+        postUserId
+      }
+      createdAt
+      updatedAt
+      postLikesId
+      likeUserId
+      likePostId
+    }
+  }
+`;
+export const onUpdateLike = /* GraphQL */ `
+  subscription OnUpdateLike($filter: ModelSubscriptionLikeFilterInput) {
+    onUpdateLike(filter: $filter) {
+      id
+      postID
+      user {
+        id
+        username
+        image
+        email
+        name
+        posts {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      post {
+        id
+        content
+        image
+        userID
+        user {
+          id
+          username
+          image
+          email
+          name
+          createdAt
+          updatedAt
+        }
+        likes {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userPostsId
+        postUserId
+      }
+      createdAt
+      updatedAt
+      postLikesId
+      likeUserId
+      likePostId
+    }
+  }
+`;
+export const onDeleteLike = /* GraphQL */ `
+  subscription OnDeleteLike($filter: ModelSubscriptionLikeFilterInput) {
+    onDeleteLike(filter: $filter) {
+      id
+      postID
+      user {
+        id
+        username
+        image
+        email
+        name
+        posts {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      post {
+        id
+        content
+        image
+        userID
+        user {
+          id
+          username
+          image
+          email
+          name
+          createdAt
+          updatedAt
+        }
+        likes {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userPostsId
+        postUserId
+      }
+      createdAt
+      updatedAt
+      postLikesId
+      likeUserId
+      likePostId
     }
   }
 `;

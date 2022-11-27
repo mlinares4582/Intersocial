@@ -80,14 +80,35 @@ export type ModelPostConnection = {
 
 export type Post = {
   __typename: "Post",
+  id: string,
   content: string,
   image?: string | null,
   userID: string,
   user?: User | null,
-  id: string,
+  likes?: ModelLikeConnection | null,
   createdAt: string,
   updatedAt: string,
   userPostsId?: string | null,
+  postUserId?: string | null,
+};
+
+export type ModelLikeConnection = {
+  __typename: "ModelLikeConnection",
+  items:  Array<Like | null >,
+  nextToken?: string | null,
+};
+
+export type Like = {
+  __typename: "Like",
+  id: string,
+  postID: string,
+  user: User,
+  post: Post,
+  createdAt: string,
+  updatedAt: string,
+  postLikesId?: string | null,
+  likeUserId: string,
+  likePostId: string,
 };
 
 export type UpdateUserInput = {
@@ -103,11 +124,12 @@ export type DeleteUserInput = {
 };
 
 export type CreatePostInput = {
+  id?: string | null,
   content: string,
   image?: string | null,
   userID: string,
-  id?: string | null,
   userPostsId?: string | null,
+  postUserId?: string | null,
 };
 
 export type ModelPostConditionInput = {
@@ -118,6 +140,7 @@ export type ModelPostConditionInput = {
   or?: Array< ModelPostConditionInput | null > | null,
   not?: ModelPostConditionInput | null,
   userPostsId?: ModelIDInput | null,
+  postUserId?: ModelIDInput | null,
 };
 
 export type ModelIDInput = {
@@ -137,14 +160,45 @@ export type ModelIDInput = {
 };
 
 export type UpdatePostInput = {
+  id: string,
   content?: string | null,
   image?: string | null,
   userID?: string | null,
-  id: string,
   userPostsId?: string | null,
+  postUserId?: string | null,
 };
 
 export type DeletePostInput = {
+  id: string,
+};
+
+export type CreateLikeInput = {
+  id?: string | null,
+  postID: string,
+  postLikesId?: string | null,
+  likeUserId: string,
+  likePostId: string,
+};
+
+export type ModelLikeConditionInput = {
+  postID?: ModelIDInput | null,
+  and?: Array< ModelLikeConditionInput | null > | null,
+  or?: Array< ModelLikeConditionInput | null > | null,
+  not?: ModelLikeConditionInput | null,
+  postLikesId?: ModelIDInput | null,
+  likeUserId?: ModelIDInput | null,
+  likePostId?: ModelIDInput | null,
+};
+
+export type UpdateLikeInput = {
+  id: string,
+  postID?: string | null,
+  postLikesId?: string | null,
+  likeUserId: string,
+  likePostId: string,
+};
+
+export type DeleteLikeInput = {
   id: string,
 };
 
@@ -166,6 +220,7 @@ export type ModelUserConnection = {
 };
 
 export type ModelPostFilterInput = {
+  id?: ModelIDInput | null,
   content?: ModelStringInput | null,
   image?: ModelStringInput | null,
   userID?: ModelIDInput | null,
@@ -173,6 +228,24 @@ export type ModelPostFilterInput = {
   or?: Array< ModelPostFilterInput | null > | null,
   not?: ModelPostFilterInput | null,
   userPostsId?: ModelIDInput | null,
+  postUserId?: ModelIDInput | null,
+};
+
+export enum ModelSortDirection {
+  ASC = "ASC",
+  DESC = "DESC",
+}
+
+
+export type ModelLikeFilterInput = {
+  id?: ModelIDInput | null,
+  postID?: ModelIDInput | null,
+  and?: Array< ModelLikeFilterInput | null > | null,
+  or?: Array< ModelLikeFilterInput | null > | null,
+  not?: ModelLikeFilterInput | null,
+  postLikesId?: ModelIDInput | null,
+  likeUserId?: ModelIDInput | null,
+  likePostId?: ModelIDInput | null,
 };
 
 export type ModelSubscriptionUserFilterInput = {
@@ -216,11 +289,19 @@ export type ModelSubscriptionStringInput = {
 };
 
 export type ModelSubscriptionPostFilterInput = {
+  id?: ModelSubscriptionIDInput | null,
   content?: ModelSubscriptionStringInput | null,
   image?: ModelSubscriptionStringInput | null,
   userID?: ModelSubscriptionIDInput | null,
   and?: Array< ModelSubscriptionPostFilterInput | null > | null,
   or?: Array< ModelSubscriptionPostFilterInput | null > | null,
+};
+
+export type ModelSubscriptionLikeFilterInput = {
+  id?: ModelSubscriptionIDInput | null,
+  postID?: ModelSubscriptionIDInput | null,
+  and?: Array< ModelSubscriptionLikeFilterInput | null > | null,
+  or?: Array< ModelSubscriptionLikeFilterInput | null > | null,
 };
 
 export type CreateUserMutationVariables = {
@@ -240,13 +321,14 @@ export type CreateUserMutation = {
       __typename: "ModelPostConnection",
       items:  Array< {
         __typename: "Post",
+        id: string,
         content: string,
         image?: string | null,
         userID: string,
-        id: string,
         createdAt: string,
         updatedAt: string,
         userPostsId?: string | null,
+        postUserId?: string | null,
       } | null >,
       nextToken?: string | null,
     } | null,
@@ -272,13 +354,14 @@ export type UpdateUserMutation = {
       __typename: "ModelPostConnection",
       items:  Array< {
         __typename: "Post",
+        id: string,
         content: string,
         image?: string | null,
         userID: string,
-        id: string,
         createdAt: string,
         updatedAt: string,
         userPostsId?: string | null,
+        postUserId?: string | null,
       } | null >,
       nextToken?: string | null,
     } | null,
@@ -304,13 +387,14 @@ export type DeleteUserMutation = {
       __typename: "ModelPostConnection",
       items:  Array< {
         __typename: "Post",
+        id: string,
         content: string,
         image?: string | null,
         userID: string,
-        id: string,
         createdAt: string,
         updatedAt: string,
         userPostsId?: string | null,
+        postUserId?: string | null,
       } | null >,
       nextToken?: string | null,
     } | null,
@@ -327,6 +411,7 @@ export type CreatePostMutationVariables = {
 export type CreatePostMutation = {
   createPost?:  {
     __typename: "Post",
+    id: string,
     content: string,
     image?: string | null,
     userID: string,
@@ -344,10 +429,24 @@ export type CreatePostMutation = {
       createdAt: string,
       updatedAt: string,
     } | null,
-    id: string,
+    likes?:  {
+      __typename: "ModelLikeConnection",
+      items:  Array< {
+        __typename: "Like",
+        id: string,
+        postID: string,
+        createdAt: string,
+        updatedAt: string,
+        postLikesId?: string | null,
+        likeUserId: string,
+        likePostId: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
     createdAt: string,
     updatedAt: string,
     userPostsId?: string | null,
+    postUserId?: string | null,
   } | null,
 };
 
@@ -359,6 +458,7 @@ export type UpdatePostMutationVariables = {
 export type UpdatePostMutation = {
   updatePost?:  {
     __typename: "Post",
+    id: string,
     content: string,
     image?: string | null,
     userID: string,
@@ -376,10 +476,24 @@ export type UpdatePostMutation = {
       createdAt: string,
       updatedAt: string,
     } | null,
-    id: string,
+    likes?:  {
+      __typename: "ModelLikeConnection",
+      items:  Array< {
+        __typename: "Like",
+        id: string,
+        postID: string,
+        createdAt: string,
+        updatedAt: string,
+        postLikesId?: string | null,
+        likeUserId: string,
+        likePostId: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
     createdAt: string,
     updatedAt: string,
     userPostsId?: string | null,
+    postUserId?: string | null,
   } | null,
 };
 
@@ -391,6 +505,7 @@ export type DeletePostMutationVariables = {
 export type DeletePostMutation = {
   deletePost?:  {
     __typename: "Post",
+    id: string,
     content: string,
     image?: string | null,
     userID: string,
@@ -408,10 +523,195 @@ export type DeletePostMutation = {
       createdAt: string,
       updatedAt: string,
     } | null,
-    id: string,
+    likes?:  {
+      __typename: "ModelLikeConnection",
+      items:  Array< {
+        __typename: "Like",
+        id: string,
+        postID: string,
+        createdAt: string,
+        updatedAt: string,
+        postLikesId?: string | null,
+        likeUserId: string,
+        likePostId: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
     createdAt: string,
     updatedAt: string,
     userPostsId?: string | null,
+    postUserId?: string | null,
+  } | null,
+};
+
+export type CreateLikeMutationVariables = {
+  input: CreateLikeInput,
+  condition?: ModelLikeConditionInput | null,
+};
+
+export type CreateLikeMutation = {
+  createLike?:  {
+    __typename: "Like",
+    id: string,
+    postID: string,
+    user:  {
+      __typename: "User",
+      id: string,
+      username: string,
+      image: string,
+      email: string,
+      name: string,
+      posts?:  {
+        __typename: "ModelPostConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    post:  {
+      __typename: "Post",
+      id: string,
+      content: string,
+      image?: string | null,
+      userID: string,
+      user?:  {
+        __typename: "User",
+        id: string,
+        username: string,
+        image: string,
+        email: string,
+        name: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      userPostsId?: string | null,
+      postUserId?: string | null,
+    },
+    createdAt: string,
+    updatedAt: string,
+    postLikesId?: string | null,
+    likeUserId: string,
+    likePostId: string,
+  } | null,
+};
+
+export type UpdateLikeMutationVariables = {
+  input: UpdateLikeInput,
+  condition?: ModelLikeConditionInput | null,
+};
+
+export type UpdateLikeMutation = {
+  updateLike?:  {
+    __typename: "Like",
+    id: string,
+    postID: string,
+    user:  {
+      __typename: "User",
+      id: string,
+      username: string,
+      image: string,
+      email: string,
+      name: string,
+      posts?:  {
+        __typename: "ModelPostConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    post:  {
+      __typename: "Post",
+      id: string,
+      content: string,
+      image?: string | null,
+      userID: string,
+      user?:  {
+        __typename: "User",
+        id: string,
+        username: string,
+        image: string,
+        email: string,
+        name: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      userPostsId?: string | null,
+      postUserId?: string | null,
+    },
+    createdAt: string,
+    updatedAt: string,
+    postLikesId?: string | null,
+    likeUserId: string,
+    likePostId: string,
+  } | null,
+};
+
+export type DeleteLikeMutationVariables = {
+  input: DeleteLikeInput,
+  condition?: ModelLikeConditionInput | null,
+};
+
+export type DeleteLikeMutation = {
+  deleteLike?:  {
+    __typename: "Like",
+    id: string,
+    postID: string,
+    user:  {
+      __typename: "User",
+      id: string,
+      username: string,
+      image: string,
+      email: string,
+      name: string,
+      posts?:  {
+        __typename: "ModelPostConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    post:  {
+      __typename: "Post",
+      id: string,
+      content: string,
+      image?: string | null,
+      userID: string,
+      user?:  {
+        __typename: "User",
+        id: string,
+        username: string,
+        image: string,
+        email: string,
+        name: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      userPostsId?: string | null,
+      postUserId?: string | null,
+    },
+    createdAt: string,
+    updatedAt: string,
+    postLikesId?: string | null,
+    likeUserId: string,
+    likePostId: string,
   } | null,
 };
 
@@ -431,13 +731,14 @@ export type GetUserQuery = {
       __typename: "ModelPostConnection",
       items:  Array< {
         __typename: "Post",
+        id: string,
         content: string,
         image?: string | null,
         userID: string,
-        id: string,
         createdAt: string,
         updatedAt: string,
         userPostsId?: string | null,
+        postUserId?: string | null,
       } | null >,
       nextToken?: string | null,
     } | null,
@@ -480,6 +781,7 @@ export type GetPostQueryVariables = {
 export type GetPostQuery = {
   getPost?:  {
     __typename: "Post",
+    id: string,
     content: string,
     image?: string | null,
     userID: string,
@@ -497,17 +799,33 @@ export type GetPostQuery = {
       createdAt: string,
       updatedAt: string,
     } | null,
-    id: string,
+    likes?:  {
+      __typename: "ModelLikeConnection",
+      items:  Array< {
+        __typename: "Like",
+        id: string,
+        postID: string,
+        createdAt: string,
+        updatedAt: string,
+        postLikesId?: string | null,
+        likeUserId: string,
+        likePostId: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
     createdAt: string,
     updatedAt: string,
     userPostsId?: string | null,
+    postUserId?: string | null,
   } | null,
 };
 
 export type ListPostsQueryVariables = {
+  id?: string | null,
   filter?: ModelPostFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
+  sortDirection?: ModelSortDirection | null,
 };
 
 export type ListPostsQuery = {
@@ -515,6 +833,7 @@ export type ListPostsQuery = {
     __typename: "ModelPostConnection",
     items:  Array< {
       __typename: "Post",
+      id: string,
       content: string,
       image?: string | null,
       userID: string,
@@ -528,10 +847,100 @@ export type ListPostsQuery = {
         createdAt: string,
         updatedAt: string,
       } | null,
-      id: string,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
       createdAt: string,
       updatedAt: string,
       userPostsId?: string | null,
+      postUserId?: string | null,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type PostsByContentQueryVariables = {
+  content: string,
+  sortDirection?: ModelSortDirection | null,
+  filter?: ModelPostFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type PostsByContentQuery = {
+  postsByContent?:  {
+    __typename: "ModelPostConnection",
+    items:  Array< {
+      __typename: "Post",
+      id: string,
+      content: string,
+      image?: string | null,
+      userID: string,
+      user?:  {
+        __typename: "User",
+        id: string,
+        username: string,
+        image: string,
+        email: string,
+        name: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      userPostsId?: string | null,
+      postUserId?: string | null,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type LikesByPostIDQueryVariables = {
+  postID: string,
+  sortDirection?: ModelSortDirection | null,
+  filter?: ModelLikeFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type LikesByPostIDQuery = {
+  likesByPostID?:  {
+    __typename: "ModelLikeConnection",
+    items:  Array< {
+      __typename: "Like",
+      id: string,
+      postID: string,
+      user:  {
+        __typename: "User",
+        id: string,
+        username: string,
+        image: string,
+        email: string,
+        name: string,
+        createdAt: string,
+        updatedAt: string,
+      },
+      post:  {
+        __typename: "Post",
+        id: string,
+        content: string,
+        image?: string | null,
+        userID: string,
+        createdAt: string,
+        updatedAt: string,
+        userPostsId?: string | null,
+        postUserId?: string | null,
+      },
+      createdAt: string,
+      updatedAt: string,
+      postLikesId?: string | null,
+      likeUserId: string,
+      likePostId: string,
     } | null >,
     nextToken?: string | null,
   } | null,
@@ -553,13 +962,14 @@ export type OnCreateUserSubscription = {
       __typename: "ModelPostConnection",
       items:  Array< {
         __typename: "Post",
+        id: string,
         content: string,
         image?: string | null,
         userID: string,
-        id: string,
         createdAt: string,
         updatedAt: string,
         userPostsId?: string | null,
+        postUserId?: string | null,
       } | null >,
       nextToken?: string | null,
     } | null,
@@ -584,13 +994,14 @@ export type OnUpdateUserSubscription = {
       __typename: "ModelPostConnection",
       items:  Array< {
         __typename: "Post",
+        id: string,
         content: string,
         image?: string | null,
         userID: string,
-        id: string,
         createdAt: string,
         updatedAt: string,
         userPostsId?: string | null,
+        postUserId?: string | null,
       } | null >,
       nextToken?: string | null,
     } | null,
@@ -615,13 +1026,14 @@ export type OnDeleteUserSubscription = {
       __typename: "ModelPostConnection",
       items:  Array< {
         __typename: "Post",
+        id: string,
         content: string,
         image?: string | null,
         userID: string,
-        id: string,
         createdAt: string,
         updatedAt: string,
         userPostsId?: string | null,
+        postUserId?: string | null,
       } | null >,
       nextToken?: string | null,
     } | null,
@@ -637,6 +1049,7 @@ export type OnCreatePostSubscriptionVariables = {
 export type OnCreatePostSubscription = {
   onCreatePost?:  {
     __typename: "Post",
+    id: string,
     content: string,
     image?: string | null,
     userID: string,
@@ -654,10 +1067,24 @@ export type OnCreatePostSubscription = {
       createdAt: string,
       updatedAt: string,
     } | null,
-    id: string,
+    likes?:  {
+      __typename: "ModelLikeConnection",
+      items:  Array< {
+        __typename: "Like",
+        id: string,
+        postID: string,
+        createdAt: string,
+        updatedAt: string,
+        postLikesId?: string | null,
+        likeUserId: string,
+        likePostId: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
     createdAt: string,
     updatedAt: string,
     userPostsId?: string | null,
+    postUserId?: string | null,
   } | null,
 };
 
@@ -668,6 +1095,7 @@ export type OnUpdatePostSubscriptionVariables = {
 export type OnUpdatePostSubscription = {
   onUpdatePost?:  {
     __typename: "Post",
+    id: string,
     content: string,
     image?: string | null,
     userID: string,
@@ -685,10 +1113,24 @@ export type OnUpdatePostSubscription = {
       createdAt: string,
       updatedAt: string,
     } | null,
-    id: string,
+    likes?:  {
+      __typename: "ModelLikeConnection",
+      items:  Array< {
+        __typename: "Like",
+        id: string,
+        postID: string,
+        createdAt: string,
+        updatedAt: string,
+        postLikesId?: string | null,
+        likeUserId: string,
+        likePostId: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
     createdAt: string,
     updatedAt: string,
     userPostsId?: string | null,
+    postUserId?: string | null,
   } | null,
 };
 
@@ -699,6 +1141,7 @@ export type OnDeletePostSubscriptionVariables = {
 export type OnDeletePostSubscription = {
   onDeletePost?:  {
     __typename: "Post",
+    id: string,
     content: string,
     image?: string | null,
     userID: string,
@@ -716,9 +1159,191 @@ export type OnDeletePostSubscription = {
       createdAt: string,
       updatedAt: string,
     } | null,
-    id: string,
+    likes?:  {
+      __typename: "ModelLikeConnection",
+      items:  Array< {
+        __typename: "Like",
+        id: string,
+        postID: string,
+        createdAt: string,
+        updatedAt: string,
+        postLikesId?: string | null,
+        likeUserId: string,
+        likePostId: string,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
     createdAt: string,
     updatedAt: string,
     userPostsId?: string | null,
+    postUserId?: string | null,
+  } | null,
+};
+
+export type OnCreateLikeSubscriptionVariables = {
+  filter?: ModelSubscriptionLikeFilterInput | null,
+};
+
+export type OnCreateLikeSubscription = {
+  onCreateLike?:  {
+    __typename: "Like",
+    id: string,
+    postID: string,
+    user:  {
+      __typename: "User",
+      id: string,
+      username: string,
+      image: string,
+      email: string,
+      name: string,
+      posts?:  {
+        __typename: "ModelPostConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    post:  {
+      __typename: "Post",
+      id: string,
+      content: string,
+      image?: string | null,
+      userID: string,
+      user?:  {
+        __typename: "User",
+        id: string,
+        username: string,
+        image: string,
+        email: string,
+        name: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      userPostsId?: string | null,
+      postUserId?: string | null,
+    },
+    createdAt: string,
+    updatedAt: string,
+    postLikesId?: string | null,
+    likeUserId: string,
+    likePostId: string,
+  } | null,
+};
+
+export type OnUpdateLikeSubscriptionVariables = {
+  filter?: ModelSubscriptionLikeFilterInput | null,
+};
+
+export type OnUpdateLikeSubscription = {
+  onUpdateLike?:  {
+    __typename: "Like",
+    id: string,
+    postID: string,
+    user:  {
+      __typename: "User",
+      id: string,
+      username: string,
+      image: string,
+      email: string,
+      name: string,
+      posts?:  {
+        __typename: "ModelPostConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    post:  {
+      __typename: "Post",
+      id: string,
+      content: string,
+      image?: string | null,
+      userID: string,
+      user?:  {
+        __typename: "User",
+        id: string,
+        username: string,
+        image: string,
+        email: string,
+        name: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      userPostsId?: string | null,
+      postUserId?: string | null,
+    },
+    createdAt: string,
+    updatedAt: string,
+    postLikesId?: string | null,
+    likeUserId: string,
+    likePostId: string,
+  } | null,
+};
+
+export type OnDeleteLikeSubscriptionVariables = {
+  filter?: ModelSubscriptionLikeFilterInput | null,
+};
+
+export type OnDeleteLikeSubscription = {
+  onDeleteLike?:  {
+    __typename: "Like",
+    id: string,
+    postID: string,
+    user:  {
+      __typename: "User",
+      id: string,
+      username: string,
+      image: string,
+      email: string,
+      name: string,
+      posts?:  {
+        __typename: "ModelPostConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+    },
+    post:  {
+      __typename: "Post",
+      id: string,
+      content: string,
+      image?: string | null,
+      userID: string,
+      user?:  {
+        __typename: "User",
+        id: string,
+        username: string,
+        image: string,
+        email: string,
+        name: string,
+        createdAt: string,
+        updatedAt: string,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      userPostsId?: string | null,
+      postUserId?: string | null,
+    },
+    createdAt: string,
+    updatedAt: string,
+    postLikesId?: string | null,
+    likeUserId: string,
+    likePostId: string,
   } | null,
 };

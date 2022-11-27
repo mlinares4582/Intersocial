@@ -15,13 +15,14 @@ export const createUser = /* GraphQL */ `
       name
       posts {
         items {
+          id
           content
           image
           userID
-          id
           createdAt
           updatedAt
           userPostsId
+          postUserId
         }
         nextToken
       }
@@ -43,13 +44,14 @@ export const updateUser = /* GraphQL */ `
       name
       posts {
         items {
+          id
           content
           image
           userID
-          id
           createdAt
           updatedAt
           userPostsId
+          postUserId
         }
         nextToken
       }
@@ -71,13 +73,14 @@ export const deleteUser = /* GraphQL */ `
       name
       posts {
         items {
+          id
           content
           image
           userID
-          id
           createdAt
           updatedAt
           userPostsId
+          postUserId
         }
         nextToken
       }
@@ -92,6 +95,7 @@ export const createPost = /* GraphQL */ `
     $condition: ModelPostConditionInput
   ) {
     createPost(input: $input, condition: $condition) {
+      id
       content
       image
       userID
@@ -107,10 +111,22 @@ export const createPost = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      id
+      likes {
+        items {
+          id
+          postID
+          createdAt
+          updatedAt
+          postLikesId
+          likeUserId
+          likePostId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       userPostsId
+      postUserId
     }
   }
 `;
@@ -120,6 +136,7 @@ export const updatePost = /* GraphQL */ `
     $condition: ModelPostConditionInput
   ) {
     updatePost(input: $input, condition: $condition) {
+      id
       content
       image
       userID
@@ -135,10 +152,22 @@ export const updatePost = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      id
+      likes {
+        items {
+          id
+          postID
+          createdAt
+          updatedAt
+          postLikesId
+          likeUserId
+          likePostId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       userPostsId
+      postUserId
     }
   }
 `;
@@ -148,6 +177,7 @@ export const deletePost = /* GraphQL */ `
     $condition: ModelPostConditionInput
   ) {
     deletePost(input: $input, condition: $condition) {
+      id
       content
       image
       userID
@@ -163,10 +193,172 @@ export const deletePost = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      id
+      likes {
+        items {
+          id
+          postID
+          createdAt
+          updatedAt
+          postLikesId
+          likeUserId
+          likePostId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       userPostsId
+      postUserId
+    }
+  }
+`;
+export const createLike = /* GraphQL */ `
+  mutation CreateLike(
+    $input: CreateLikeInput!
+    $condition: ModelLikeConditionInput
+  ) {
+    createLike(input: $input, condition: $condition) {
+      id
+      postID
+      user {
+        id
+        username
+        image
+        email
+        name
+        posts {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      post {
+        id
+        content
+        image
+        userID
+        user {
+          id
+          username
+          image
+          email
+          name
+          createdAt
+          updatedAt
+        }
+        likes {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userPostsId
+        postUserId
+      }
+      createdAt
+      updatedAt
+      postLikesId
+      likeUserId
+      likePostId
+    }
+  }
+`;
+export const updateLike = /* GraphQL */ `
+  mutation UpdateLike(
+    $input: UpdateLikeInput!
+    $condition: ModelLikeConditionInput
+  ) {
+    updateLike(input: $input, condition: $condition) {
+      id
+      postID
+      user {
+        id
+        username
+        image
+        email
+        name
+        posts {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      post {
+        id
+        content
+        image
+        userID
+        user {
+          id
+          username
+          image
+          email
+          name
+          createdAt
+          updatedAt
+        }
+        likes {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userPostsId
+        postUserId
+      }
+      createdAt
+      updatedAt
+      postLikesId
+      likeUserId
+      likePostId
+    }
+  }
+`;
+export const deleteLike = /* GraphQL */ `
+  mutation DeleteLike(
+    $input: DeleteLikeInput!
+    $condition: ModelLikeConditionInput
+  ) {
+    deleteLike(input: $input, condition: $condition) {
+      id
+      postID
+      user {
+        id
+        username
+        image
+        email
+        name
+        posts {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      post {
+        id
+        content
+        image
+        userID
+        user {
+          id
+          username
+          image
+          email
+          name
+          createdAt
+          updatedAt
+        }
+        likes {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        userPostsId
+        postUserId
+      }
+      createdAt
+      updatedAt
+      postLikesId
+      likeUserId
+      likePostId
     }
   }
 `;

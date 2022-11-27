@@ -12,9 +12,19 @@ type User @model {
 }
 
 type Post @model {
-  content: String!
+  id: ID!  @primaryKey 
+  content: String! @index
   image: String
   userID:ID!
-  user: User @belongsTo
+  user: User @hasOne 
+  likes: [Like] @hasMany 
 }
 
+
+
+type Like @model(queries:null) {
+  id: ID! @primaryKey 
+  postID: ID! @index
+  user: User! @hasOne
+  post: Post! @hasOne
+}

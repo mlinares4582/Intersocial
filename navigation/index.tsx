@@ -77,7 +77,7 @@ function BottomTabNavigator() {
         const userData = await API.graphql(graphqlOperation(getUser, {id: userInfo.attributes.sub}))
         if (userData) {
           setUser(userData.data.getUser);
-          console.log("SETUSER", userData.data.getUser)
+          // console.log("SETUSER", userData.data.getUser)
         }
       }catch (e) {
         console.log("ERROR",e);
