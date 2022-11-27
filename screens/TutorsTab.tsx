@@ -51,11 +51,11 @@ const tutors = [
     },
     {
         name: 'Michael Linares',
-        courses: 'AWS CDK & React NAtive',
+        courses: 'AWS CDK & React Native',
         email: 'mglinares.2419@gmail.com',
         availability: '9:00am - 1:00pm',
         classroom: 'Classroom: F122',
-        image: require('../assets/images/default.jpg'),
+        image: require('../assets/images/michael2.jpg'),
         id: 2,
     },
     {
@@ -64,15 +64,15 @@ const tutors = [
         email: 'joseraul2015@hotmail.com',
         availability: '9:00am - 6:00pm',
         classroom: 'Classroom: F122',
-        image: require('../assets/images/default.jpg'),
+        image: require('../assets/images/jose2.jpg'),
         id:3
     },{
-        name: 'Michael Linares',
-        courses: 'AWS CDK & React NAtive',
-        email: 'mglinares.2419@gmail.com',
+        name: 'Izahel Vega',
+        courses: 'Biology',
+        email: 'izahel.vega@gmail.com',
         availability: '9:00am - 1:00pm',
         classroom: 'Classroom: F122',
-        image: require('../assets/images/default.jpg'),
+        image: require('../assets/images/izahel2.jpg'),
         id: 4,
     },
 ]

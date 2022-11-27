@@ -22,7 +22,7 @@
     },
     "lastMessage": {
       "id": "m2",
-      "text": "How are you doing? Did you get any chance to look at what I've sent you?",
+      "text": "Como estas?",
       "createdAt": "2022-10-14T10:48:00.000Z"
     }
   },
@@ -30,12 +30,12 @@
     "id": "3",
     "user": {
       "id": "u4",
-      "name": "Alex",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/8.png"
+      "name": "Jose Alicea",
+      "image": "https://scontent.fsju2-1.fna.fbcdn.net/v/t39.30808-6/244992711_4485085664871973_3016513938307700742_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_ohc=1W2MLF-O-2EAX_mu8wm&_nc_ht=scontent.fsju2-1.fna&oh=00_AfBzUCYlfaUrmgpK-NhpSgz_DpRZPIx9VDtuhXrpztxhfA&oe=6388CFC7"
     },
     "lastMessage": {
       "id": "m3",
-      "text": "Hi, Vadim. I hope the plans for to night are still on.",
+      "text": "Hola",
       "createdAt": "2022-10-13T20:48:00.000Z"
     }
   },
@@ -43,12 +43,12 @@
     "id": "4",
     "user": {
       "id": "u5",
-      "name": "Vlad",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/jeff.jpeg"
+      "name": "Izahel vega",
+      "image": "https://scontent.fsju2-1.fna.fbcdn.net/v/t39.30808-6/289349491_10227518746890330_567310013717701575_n.jpg?stp=cp6_dst-jpg&_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=zNlaR-4cghwAX_F_ACx&_nc_ht=scontent.fsju2-1.fna&oh=00_AfAOGcLQrTUCmM37-PFU9VfpDfty1JUF3biA9rP0IcxwSg&oe=63883DBF"
     },
     "lastMessage": {
       "id": "m4",
-      "text": "Could you please review my last merge?",
+      "text": "Como hiciste el primer ejercicio?",
       "createdAt": "2022-10-12T14:48:00.000Z"
     }
   },
@@ -56,12 +56,12 @@
     "id": "5",
     "user": {
       "id": "u6",
-      "name": "Elon Musk",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/elon.png"
+      "name": "Jaime Yeckle",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAbFBMVEWVvCMAgzz60T6YvimVvCIAgD3/1D6avyGYvSLPwzsAfjyCpjv90j5yqiyUrDuDtCc5kTejvyc5kDeQuiQ9lTVvqyuAsSkAhDtaoTAvjjh1rippqC1hojBGmDRMmzIdijmItyVUnzF5pDtMlTumW/GVAAAE+UlEQVR4nO3dW3ebOBQFYNOgSFWb4kZcbAgGd/7/fxxw08tKHHNGR0fL0uzdlz4VvpF8A+bs3UPu2T2UeWcV7nIOhOkHwvQDYfqBMP1AmH4gTD8Qph8I0w+E6QfC9ANh+oEweMyamAeMKjRaz1XbtpXTOpoyntBoN4xToZRVqpvGxkVCxhKWuhoXXfEry1/HWUc4cCyhcbX9w3tF2tFFWMY4Qt0Ub30XY9fIL2MUoT7ZK7419iROjCE09UfAhVhLb9QIQj1e26G/d+oovIryQn24BVxW8SBLFBea9uMt+kqsRDequLCcNoBFMcmegLDQDFtLuCziILmI4mvYbQKLopM8AWGhGW6/zfyMagQXUViojwRgUewF306FhW77VbjGCp6CrND0lE26bNNebpsKCzc+7X8LD6kKdU0U1nIvRGHhMwlYFM+pCg3trbQojqnu0vyFep/7Ls3/nSb/TwvzlPsnPvlbm5M7hfv45n1M95s38deT5E9g/ALmxrxsL6J9Sfoqxi73K1GUq4lt2lcTd/p8e5+q1K8Ir7ctMr+qvxzjBjGLOzPrvZnM764txOH6HdJiyOQO6fJanK/d5a7zuct9eVKhVm+eVKh0lCNHfdqk7paVW/4UXT3k9rTJJUabuWr7tppNjk8MvR7v8tRX1CPiyb3kA2H64QhJ/78/7Z8yhHieJkPoqvnjVL/y8J0QV1Hid57+QvNEuVJoP3/9dDVf/8rjF6u243krnCOkXEb7UPh3Hr9Q/ikIIYQQQgj5Qs+7qBBCCCGEEEIIIYQQQgghhBBCCOGdCfO/igEhhBBCCCGEEEIIIYQQQgghhBBCCOF9CD2nEkAIIYQQQgghhBBCCCGEEEIIYWLC/H/jQwjh/Qvzf+ore6HvBFAI70joORSMIWxiC/1G2iQkPEUXkibKQ/gfhOf4QtZcDAjfCz3nRTOEm2M7Aws957gyhFVkoeew4YSET7GF5Zy7kDaN3H5+JIQk9JzbzhCWFKH68Y2Qfyj/rTzHDTOEmjRRnjAASlG+OnjXs3GElPMKFzv7nSZHSBm3HlAYf16b3p5FHlToOZCXI6RWrIRJF19oTqR3iFDx7WbjCEk/gUPF9+chS1hFFfpW0bBmX8Z8M1W+/QIcIbXrKEg63yoajtA0tJ6cEPEvGODNoI23Tf1LMFhCamFVgPgXs/HW0MRaROtfecUUxvpIZBRCMWdBR3o7VYxia6awdDH2qTozajC487xp16OYQFb/I3tiuSb1jvHiOGfIn8muz8Kr6P19LZRwp0+iRG5pd4i5+lryhyK7Wj5Ic4A+iK2iZbcJhelG0GKf/D27LilQ+4OpJgGjmmZ+HU2ofgvj6uA71da7AH074Ro8dNMFXUbVNUEKvQJ2lBh3ol2fpwHHQIVeQVtYdLUPtFXt1IYq9ArbM2N0uw+wjvbYh2u8Ct2kY0xVX+3JI0epfW8CNnqF7woyej5M74ryqDzbneewjWUSbUjlslnPHsiFNy7bM/DpCPU9GVNWL8eC/ppUqjue251A4Zxco5Ux2rWHurP2plMpZW1XH3qnQ776/kS2s2tR6rIfzvVxKuzbxiNrbTEd69Ow4IR0ayK0khmzth06V/XNMLy8ZhiavnJurUSUw10SsXftfc9YlMOiWS79QJh+IEw/EKYfCNMPhOkHwvQDYfqBMP1AmH4gTD8Qpp//iTDvLMLc8y+20Koj4ZlR5gAAAABJRU5ErkJggg=="
     },
     "lastMessage": {
       "id": "m5",
-      "text": "I would be happy meeting you",
+      "text": "La reunion es a las 2:00pm",
       "createdAt": "2022-10-11T14:48:00.000Z"
     }
   },
@@ -69,12 +69,12 @@
     "id": "6",
     "user": {
       "id": "u7",
-      "name": "Adrian",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/graham.jpg"
+      "name": "Mireya",
+      "image": "https://pps.whatsapp.net/v/t61.24694-24/239622652_443058587557735_4341920639531787168_n.jpg?ccb=11-4&oh=01_AdQyDHyU14ZnPevFF2x1AURtat4MssDPbA_PHRkWN5lATw&oe=63900216"
     },
     "lastMessage": {
       "id": "m6",
-      "text": "I think I have a solution for tha.",
+      "text": "nos reunimos a las 5:00pm",
       "createdAt": "2022-10-10T14:48:00.000Z"
     }
   },
@@ -82,12 +82,12 @@
     "id": "7",
     "user": {
       "id": "u8",
-      "name": "Borja",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/zuck.jpeg"
+      "name": "Felix",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAbFBMVEWVvCMAgzz60T6YvimVvCIAgD3/1D6avyGYvSLPwzsAfjyCpjv90j5yqiyUrDuDtCc5kTejvyc5kDeQuiQ9lTVvqyuAsSkAhDtaoTAvjjh1rippqC1hojBGmDRMmzIdijmItyVUnzF5pDtMlTumW/GVAAAE+UlEQVR4nO3dW3ebOBQFYNOgSFWb4kZcbAgGd/7/fxxw08tKHHNGR0fL0uzdlz4VvpF8A+bs3UPu2T2UeWcV7nIOhOkHwvQDYfqBMP1AmH4gTD8Qph8I0w+E6QfC9ANh+oEweMyamAeMKjRaz1XbtpXTOpoyntBoN4xToZRVqpvGxkVCxhKWuhoXXfEry1/HWUc4cCyhcbX9w3tF2tFFWMY4Qt0Ub30XY9fIL2MUoT7ZK7419iROjCE09UfAhVhLb9QIQj1e26G/d+oovIryQn24BVxW8SBLFBea9uMt+kqsRDequLCcNoBFMcmegLDQDFtLuCziILmI4mvYbQKLopM8AWGhGW6/zfyMagQXUViojwRgUewF306FhW77VbjGCp6CrND0lE26bNNebpsKCzc+7X8LD6kKdU0U1nIvRGHhMwlYFM+pCg3trbQojqnu0vyFep/7Ls3/nSb/TwvzlPsnPvlbm5M7hfv45n1M95s38deT5E9g/ALmxrxsL6J9Sfoqxi73K1GUq4lt2lcTd/p8e5+q1K8Ir7ctMr+qvxzjBjGLOzPrvZnM764txOH6HdJiyOQO6fJanK/d5a7zuct9eVKhVm+eVKh0lCNHfdqk7paVW/4UXT3k9rTJJUabuWr7tppNjk8MvR7v8tRX1CPiyb3kA2H64QhJ/78/7Z8yhHieJkPoqvnjVL/y8J0QV1Hid57+QvNEuVJoP3/9dDVf/8rjF6u243krnCOkXEb7UPh3Hr9Q/ikIIYQQQgj5Qs+7qBBCCCGEEEIIIYQQQgghhBBCCOGdCfO/igEhhBBCCCGEEEIIIYQQQgghhBBCCOF9CD2nEkAIIYQQQgghhBBCCCGEEEIIYWLC/H/jQwjh/Qvzf+ore6HvBFAI70joORSMIWxiC/1G2iQkPEUXkibKQ/gfhOf4QtZcDAjfCz3nRTOEm2M7Aws957gyhFVkoeew4YSET7GF5Zy7kDaN3H5+JIQk9JzbzhCWFKH68Y2Qfyj/rTzHDTOEmjRRnjAASlG+OnjXs3GElPMKFzv7nSZHSBm3HlAYf16b3p5FHlToOZCXI6RWrIRJF19oTqR3iFDx7WbjCEk/gUPF9+chS1hFFfpW0bBmX8Z8M1W+/QIcIbXrKEg63yoajtA0tJ6cEPEvGODNoI23Tf1LMFhCamFVgPgXs/HW0MRaROtfecUUxvpIZBRCMWdBR3o7VYxia6awdDH2qTozajC487xp16OYQFb/I3tiuSb1jvHiOGfIn8muz8Kr6P19LZRwp0+iRG5pd4i5+lryhyK7Wj5Ic4A+iK2iZbcJhelG0GKf/D27LilQ+4OpJgGjmmZ+HU2ofgvj6uA71da7AH074Ro8dNMFXUbVNUEKvQJ2lBh3ol2fpwHHQIVeQVtYdLUPtFXt1IYq9ArbM2N0uw+wjvbYh2u8Ct2kY0xVX+3JI0epfW8CNnqF7woyej5M74ryqDzbneewjWUSbUjlslnPHsiFNy7bM/DpCPU9GVNWL8eC/ppUqjue251A4Zxco5Ux2rWHurP2plMpZW1XH3qnQ776/kS2s2tR6rIfzvVxKuzbxiNrbTEd69Ow4IR0ayK0khmzth06V/XNMLy8ZhiavnJurUSUw10SsXftfc9YlMOiWS79QJh+IEw/EKYfCNMPhOkHwvQDYfqBMP1AmH4gTD8Qpp//iTDvLMLc8y+20Koj4ZlR5gAAAABJRU5ErkJggg=="
     },
     "lastMessage": {
       "id": "m7",
-      "text": "How are you doing?",
+      "text": "Nos vemnos en la cafeteria",
       "createdAt": "2022-10-09T14:30:00.000Z"
     }
   },
@@ -95,52 +95,52 @@
     "id": "8",
     "user": {
       "id": "u9",
-      "name": "Mom",
-      "image": "https://image.shutterstock.com/image-vector/super-mom-hero-superhero-cartoon-600w-720015928.jpg"
+      "name": "Anthony",
+      "image": "https://pps.whatsapp.net/v/t61.24694-24/265580542_835193234546811_4528318025962768124_n.jpg?ccb=11-4&oh=01_AdR6e8aoKpBJ-V19mDdpCf_YNk_sENZTBIWGPJbEUCSsUw&oe=638FF021"
     },
     "lastMessage": {
       "id": "m8",
-      "text": "Dear, what did you eat, today?",
-      "createdAt": "2020-09-27T15:40:00.000Z"
+      "text": "Como vas con el trabajo?",
+      "createdAt": "2022-09-27T15:40:00.000Z"
     }
   },
   {
     "id": "9",
     "user": {
       "id": "u9",
-      "name": "Andrei",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/4.jpg"
+      "name": "Axel",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAbFBMVEWVvCMAgzz60T6YvimVvCIAgD3/1D6avyGYvSLPwzsAfjyCpjv90j5yqiyUrDuDtCc5kTejvyc5kDeQuiQ9lTVvqyuAsSkAhDtaoTAvjjh1rippqC1hojBGmDRMmzIdijmItyVUnzF5pDtMlTumW/GVAAAE+UlEQVR4nO3dW3ebOBQFYNOgSFWb4kZcbAgGd/7/fxxw08tKHHNGR0fL0uzdlz4VvpF8A+bs3UPu2T2UeWcV7nIOhOkHwvQDYfqBMP1AmH4gTD8Qph8I0w+E6QfC9ANh+oEweMyamAeMKjRaz1XbtpXTOpoyntBoN4xToZRVqpvGxkVCxhKWuhoXXfEry1/HWUc4cCyhcbX9w3tF2tFFWMY4Qt0Ub30XY9fIL2MUoT7ZK7419iROjCE09UfAhVhLb9QIQj1e26G/d+oovIryQn24BVxW8SBLFBea9uMt+kqsRDequLCcNoBFMcmegLDQDFtLuCziILmI4mvYbQKLopM8AWGhGW6/zfyMagQXUViojwRgUewF306FhW77VbjGCp6CrND0lE26bNNebpsKCzc+7X8LD6kKdU0U1nIvRGHhMwlYFM+pCg3trbQojqnu0vyFep/7Ls3/nSb/TwvzlPsnPvlbm5M7hfv45n1M95s38deT5E9g/ALmxrxsL6J9Sfoqxi73K1GUq4lt2lcTd/p8e5+q1K8Ir7ctMr+qvxzjBjGLOzPrvZnM764txOH6HdJiyOQO6fJanK/d5a7zuct9eVKhVm+eVKh0lCNHfdqk7paVW/4UXT3k9rTJJUabuWr7tppNjk8MvR7v8tRX1CPiyb3kA2H64QhJ/78/7Z8yhHieJkPoqvnjVL/y8J0QV1Hid57+QvNEuVJoP3/9dDVf/8rjF6u243krnCOkXEb7UPh3Hr9Q/ikIIYQQQgj5Qs+7qBBCCCGEEEIIIYQQQgghhBBCCOGdCfO/igEhhBBCCCGEEEIIIYQQQgghhBBCCOF9CD2nEkAIIYQQQgghhBBCCCGEEEIIYWLC/H/jQwjh/Qvzf+ore6HvBFAI70joORSMIWxiC/1G2iQkPEUXkibKQ/gfhOf4QtZcDAjfCz3nRTOEm2M7Aws957gyhFVkoeew4YSET7GF5Zy7kDaN3H5+JIQk9JzbzhCWFKH68Y2Qfyj/rTzHDTOEmjRRnjAASlG+OnjXs3GElPMKFzv7nSZHSBm3HlAYf16b3p5FHlToOZCXI6RWrIRJF19oTqR3iFDx7WbjCEk/gUPF9+chS1hFFfpW0bBmX8Z8M1W+/QIcIbXrKEg63yoajtA0tJ6cEPEvGODNoI23Tf1LMFhCamFVgPgXs/HW0MRaROtfecUUxvpIZBRCMWdBR3o7VYxia6awdDH2qTozajC487xp16OYQFb/I3tiuSb1jvHiOGfIn8muz8Kr6P19LZRwp0+iRG5pd4i5+lryhyK7Wj5Ic4A+iK2iZbcJhelG0GKf/D27LilQ+4OpJgGjmmZ+HU2ofgvj6uA71da7AH074Ro8dNMFXUbVNUEKvQJ2lBh3ol2fpwHHQIVeQVtYdLUPtFXt1IYq9ArbM2N0uw+wjvbYh2u8Ct2kY0xVX+3JI0epfW8CNnqF7woyej5M74ryqDzbneewjWUSbUjlslnPHsiFNy7bM/DpCPU9GVNWL8eC/ppUqjue251A4Zxco5Ux2rWHurP2plMpZW1XH3qnQ776/kS2s2tR6rIfzvVxKuzbxiNrbTEd69Ow4IR0ayK0khmzth06V/XNMLy8ZhiavnJurUSUw10SsXftfc9YlMOiWS79QJh+IEw/EKYfCNMPhOkHwvQDYfqBMP1AmH4gTD8Qpp//iTDvLMLc8y+20Koj4ZlR5gAAAABJRU5ErkJggg=="
     },
     "lastMessage": {
       "id": "m8",
-      "text": "What about our podcast?",
-      "createdAt": "2020-09-27T15:40:00.000Z"
+      "text": "Cuando es la reunion del capstone?",
+      "createdAt": "2022-09-27T15:40:00.000Z"
     }
   },
   {
     "id": "10",
     "user": {
       "id": "u9",
-      "name": "Misha",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/biahaze.jpg"
+      "name": "Juleishka",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAbFBMVEWVvCMAgzz60T6YvimVvCIAgD3/1D6avyGYvSLPwzsAfjyCpjv90j5yqiyUrDuDtCc5kTejvyc5kDeQuiQ9lTVvqyuAsSkAhDtaoTAvjjh1rippqC1hojBGmDRMmzIdijmItyVUnzF5pDtMlTumW/GVAAAE+UlEQVR4nO3dW3ebOBQFYNOgSFWb4kZcbAgGd/7/fxxw08tKHHNGR0fL0uzdlz4VvpF8A+bs3UPu2T2UeWcV7nIOhOkHwvQDYfqBMP1AmH4gTD8Qph8I0w+E6QfC9ANh+oEweMyamAeMKjRaz1XbtpXTOpoyntBoN4xToZRVqpvGxkVCxhKWuhoXXfEry1/HWUc4cCyhcbX9w3tF2tFFWMY4Qt0Ub30XY9fIL2MUoT7ZK7419iROjCE09UfAhVhLb9QIQj1e26G/d+oovIryQn24BVxW8SBLFBea9uMt+kqsRDequLCcNoBFMcmegLDQDFtLuCziILmI4mvYbQKLopM8AWGhGW6/zfyMagQXUViojwRgUewF306FhW77VbjGCp6CrND0lE26bNNebpsKCzc+7X8LD6kKdU0U1nIvRGHhMwlYFM+pCg3trbQojqnu0vyFep/7Ls3/nSb/TwvzlPsnPvlbm5M7hfv45n1M95s38deT5E9g/ALmxrxsL6J9Sfoqxi73K1GUq4lt2lcTd/p8e5+q1K8Ir7ctMr+qvxzjBjGLOzPrvZnM764txOH6HdJiyOQO6fJanK/d5a7zuct9eVKhVm+eVKh0lCNHfdqk7paVW/4UXT3k9rTJJUabuWr7tppNjk8MvR7v8tRX1CPiyb3kA2H64QhJ/78/7Z8yhHieJkPoqvnjVL/y8J0QV1Hid57+QvNEuVJoP3/9dDVf/8rjF6u243krnCOkXEb7UPh3Hr9Q/ikIIYQQQgj5Qs+7qBBCCCGEEEIIIYQQQgghhBBCCOGdCfO/igEhhBBCCCGEEEIIIYQQQgghhBBCCOF9CD2nEkAIIYQQQgghhBBCCCGEEEIIYWLC/H/jQwjh/Qvzf+ore6HvBFAI70joORSMIWxiC/1G2iQkPEUXkibKQ/gfhOf4QtZcDAjfCz3nRTOEm2M7Aws957gyhFVkoeew4YSET7GF5Zy7kDaN3H5+JIQk9JzbzhCWFKH68Y2Qfyj/rTzHDTOEmjRRnjAASlG+OnjXs3GElPMKFzv7nSZHSBm3HlAYf16b3p5FHlToOZCXI6RWrIRJF19oTqR3iFDx7WbjCEk/gUPF9+chS1hFFfpW0bBmX8Z8M1W+/QIcIbXrKEg63yoajtA0tJ6cEPEvGODNoI23Tf1LMFhCamFVgPgXs/HW0MRaROtfecUUxvpIZBRCMWdBR3o7VYxia6awdDH2qTozajC487xp16OYQFb/I3tiuSb1jvHiOGfIn8muz8Kr6P19LZRwp0+iRG5pd4i5+lryhyK7Wj5Ic4A+iK2iZbcJhelG0GKf/D27LilQ+4OpJgGjmmZ+HU2ofgvj6uA71da7AH074Ro8dNMFXUbVNUEKvQJ2lBh3ol2fpwHHQIVeQVtYdLUPtFXt1IYq9ArbM2N0uw+wjvbYh2u8Ct2kY0xVX+3JI0epfW8CNnqF7woyej5M74ryqDzbneewjWUSbUjlslnPHsiFNy7bM/DpCPU9GVNWL8eC/ppUqjue251A4Zxco5Ux2rWHurP2plMpZW1XH3qnQ776/kS2s2tR6rIfzvVxKuzbxiNrbTEd69Ow4IR0ayK0khmzth06V/XNMLy8ZhiavnJurUSUw10SsXftfc9YlMOiWS79QJh+IEw/EKYfCNMPhOkHwvQDYfqBMP1AmH4gTD8Qpp//iTDvLMLc8y+20Koj4ZlR5gAAAABJRU5ErkJggg=="
     },
     "lastMessage": {
       "id": "m8",
-      "text": "Do I have to send you any more details?",
-      "createdAt": "2020-09-27T15:40:00.000Z"
+      "text": "Holaaa",
+      "createdAt": "2022-09-27T15:40:00.000Z"
     }
   },
   {
     "id": "11",
     "user": {
       "id": "u9",
-      "name": "Alina",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/7.png"
+      "name": "Cesar Alejandro",
+      "image": "https://pps.whatsapp.net/v/t61.24694-24/299586469_603108207879096_300366799361531734_n.jpg?ccb=11-4&oh=01_AdTc5gSzaTCyYSIb1wzDV_C-wzL7YnBZFelcheJ7DwjOZw&oe=638FF63E"
     },
     "lastMessage": {
       "id": "m8",
-      "text": "Here is a picture of Mark.",
-      "createdAt": "2020-09-27T15:40:00.000Z"
+      "text": "El lab es para el 29 de nov",
+      "createdAt": "2022-09-27T15:40:00.000Z"
     }
   }
 ]
