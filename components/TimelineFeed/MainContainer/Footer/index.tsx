@@ -43,7 +43,7 @@ const Footer = ({ post }: FooterProps) => {
             return;
         }
 
-        const likes:CreateLikeInput = {
+        const likes = {
             userID: user.attributes.sub,
             postID: post.id,
         }

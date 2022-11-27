@@ -36,7 +36,7 @@ const LeftContianer = ({ users }: LeftContianerProps) => {
     }, [])
 
 
-console.log("imageprofile", user?.["image"])
+// console.log("imageprofile", user?.["image"])
 
     return (
         <View>

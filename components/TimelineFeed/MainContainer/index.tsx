@@ -17,7 +17,7 @@ export type MainContianerProps = {
 
 const MainContianer = ({ post }: MainContianerProps) => {
     const [user, setUser] = useState(null)
-    console.log("USEEEERRRRR",user?.["image"])
+    
     const fetchUser = async () => {
         const userInfo = await Auth.currentAuthenticatedUser({ bypassCache: true})
         if(!userInfo) {
@@ -37,12 +37,10 @@ const MainContianer = ({ post }: MainContianerProps) => {
 
     useEffect(() => {
       //get the current user
-
-
     fetchUser()
     }, [])
 
-    console.log("username",post.image)
+    // console.log("username",post.image)
     return (
     <View style={styles.container}>
         <View style={styles.postHeaderContainer}>

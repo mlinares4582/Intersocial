@@ -45,38 +45,39 @@ const pickImage = async () => {
 const uploadImage = async () => {
     try {
         const response = await fetch(imageUrl);
-        // console.log("RESSSPONSE",response)
+        console.log("RESSSPONSE",response)
         const blob = await response.blob();
         const urlParts = imageUrl.split('.');
         const extension = urlParts[urlParts.length - 1];
         // console.log("extension",extension)
         const key =`${uuidv4()}.${extension}`;
         // console.log("key",key);
-        await Storage.put(key, blob);
+        const res = await Storage.put(key, blob);
+        console.log("RESSS",res)
 
         return key;
         
     } catch (error) {
         console.log("eerr",error)
     }
-    return '';
+    // return '';
 
 }
 
 const onPressPost = async () => {
-    let image;
-    if(!!imageUrl) {
-        image = await uploadImage();
-    }
-    console.log(image);
-
+    // let image;
+    // if(!!imageUrl) {
+    //     image = await uploadImage();
+    // }
+    // console.log("IMAGGEEEE",image);
+    
     try {
 
         const currentUser = await Auth.currentAuthenticatedUser({bypassCache: true});
 
         const newPost ={
             content: post,
-            image,
+            image: imageUrl,
             userID: currentUser.attributes.sub
         }
         //POST REQUEST

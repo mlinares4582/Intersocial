@@ -196,7 +196,7 @@ function BottomTabNavigator() {
           
           headerLeft: () => (
             <TouchableOpacity onPress={() =>  navigation.navigate('Profile')}>
-              <ProfilePicture size={40} image={'https://avatarfiles.alphacoders.com/277/thumb-277051.png'}/>
+              <ProfilePicture size={40}image={user?.["image"]}/>
             </TouchableOpacity>
           ),
           
