@@ -1,25 +1,22 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-inter-dev-213207-authRole",
-      "UnauthRoleArn": "arn:aws:iam::239451805807:role/amplify-inter-dev-213207-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::239451805807:role/amplify-inter-dev-213207-authRole",
+      "AuthRoleName": "amplify-intersocialcap-dev-165806-authRole",
+      "UnauthRoleArn": "arn:aws:iam::239451805807:role/amplify-intersocialcap-dev-165806-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::239451805807:role/amplify-intersocialcap-dev-165806-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-inter-dev-213207-deployment",
-      "UnauthRoleName": "amplify-inter-dev-213207-unauthRole",
-      "StackName": "amplify-inter-dev-213207",
-      "StackId": "arn:aws:cloudformation:us-east-1:239451805807:stack/amplify-inter-dev-213207/25259f30-6d2a-11ed-95e8-0e260fe472a5",
-      "AmplifyAppId": "d2jfqv82itcis9"
+      "DeploymentBucketName": "amplify-intersocialcap-dev-165806-deployment",
+      "UnauthRoleName": "amplify-intersocialcap-dev-165806-unauthRole",
+      "StackName": "amplify-intersocialcap-dev-165806",
+      "StackId": "arn:aws:cloudformation:us-east-1:239451805807:stack/amplify-intersocialcap-dev-165806/3204f990-6e96-11ed-be67-1209a7a6d13f",
+      "AmplifyAppId": "d18b9m3gdnxzxp"
     },
     "categories": {
       "auth": {
-        "inter777bc3aa": {}
+        "intersocialcap31ac7461": {}
       },
       "api": {
-        "inter": {}
-      },
-      "storage": {
-        "Intersocial": {}
+        "intersocialcap": {}
       }
     }
   }

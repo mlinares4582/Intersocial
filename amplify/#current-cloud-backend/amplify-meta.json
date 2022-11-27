@@ -1,19 +1,19 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-instersocial-dev-30213-authRole",
-      "UnauthRoleArn": "arn:aws:iam::239451805807:role/amplify-instersocial-dev-30213-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::239451805807:role/amplify-instersocial-dev-30213-authRole",
+      "AuthRoleName": "amplify-intersocialcap-dev-165806-authRole",
+      "UnauthRoleArn": "arn:aws:iam::239451805807:role/amplify-intersocialcap-dev-165806-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::239451805807:role/amplify-intersocialcap-dev-165806-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-instersocial-dev-30213-deployment",
-      "UnauthRoleName": "amplify-instersocial-dev-30213-unauthRole",
-      "StackName": "amplify-instersocial-dev-30213",
-      "StackId": "arn:aws:cloudformation:us-east-1:239451805807:stack/amplify-instersocial-dev-30213/9e8a52f0-5757-11ed-b994-0e40f5ee4e7d",
-      "AmplifyAppId": "d32dxp1c3w6c2m"
+      "DeploymentBucketName": "amplify-intersocialcap-dev-165806-deployment",
+      "UnauthRoleName": "amplify-intersocialcap-dev-165806-unauthRole",
+      "StackName": "amplify-intersocialcap-dev-165806",
+      "StackId": "arn:aws:cloudformation:us-east-1:239451805807:stack/amplify-intersocialcap-dev-165806/3204f990-6e96-11ed-be67-1209a7a6d13f",
+      "AmplifyAppId": "d18b9m3gdnxzxp"
     }
   },
   "auth": {
-    "instersocialbb0435e2": {
+    "intersocialcap31ac7461": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -37,24 +37,24 @@
         ]
       },
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-instersocial-dev-30213-deployment/amplify-cfn-templates/auth/instersocialbb0435e2-cloudformation-template.json",
-        "logicalId": "authinstersocialbb0435e2"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-intersocialcap-dev-165806-deployment/amplify-cfn-templates/auth/intersocialcap31ac7461-cloudformation-template.json",
+        "logicalId": "authintersocialcap31ac7461"
       },
-      "lastPushTimeStamp": "2022-11-16T06:13:50.380Z",
+      "lastPushTimeStamp": "2022-11-27T21:23:26.469Z",
       "output": {
-        "UserPoolId": "us-east-1_DMNC3dSYF",
-        "AppClientIDWeb": "1i4pffb37uhutvr52bbmjne9nd",
-        "AppClientID": "4c5rihgpe4pimrq3vcss0qdu49",
-        "IdentityPoolId": "us-east-1:979b8ae4-bced-4a1c-9ada-8b1c6e9fedf3",
-        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:239451805807:userpool/us-east-1_DMNC3dSYF",
-        "IdentityPoolName": "instersocialbb0435e2_identitypool_bb0435e2__dev",
-        "UserPoolName": "instersocialbb0435e2_userpool_bb0435e2"
+        "UserPoolId": "us-east-1_oCMF2JaKJ",
+        "AppClientIDWeb": "7rtc6ft981kkf8239rspbleblp",
+        "AppClientID": "3od03kcbr5iqr76f6sqfgeadsf",
+        "IdentityPoolId": "us-east-1:47b2b986-0167-4286-bcbd-cf357fd10539",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:239451805807:userpool/us-east-1_oCMF2JaKJ",
+        "IdentityPoolName": "intersocialcap31ac7461_identitypool_31ac7461__dev",
+        "UserPoolName": "intersocialcap31ac7461_userpool_31ac7461"
       },
-      "lastPushDirHash": "DI0HVfDFbWMNmfGYtVg3V+D0cIk="
+      "lastPushDirHash": "TsRQaDi05xsba/QUOVLTJ3Vljdo="
     }
   },
   "api": {
-    "instersocial": {
+    "intersocialcap": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -64,22 +64,22 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 365,
-              "apiKeyExpirationDate": "2023-11-16T06:09:09.267Z",
-              "description": "instersocial"
+              "apiKeyExpirationDate": "2023-11-27T21:14:51.039Z",
+              "description": "capstone"
             }
           },
           "additionalAuthenticationProviders": []
         },
-        "GraphQLAPIIdOutput": "d7rz4wjvnfd6fllwb3mknkziu4",
-        "GraphQLAPIEndpointOutput": "https://tryuls7l4bd5dcs33dezw74zpi.appsync-api.us-east-1.amazonaws.com/graphql",
-        "GraphQLAPIKeyOutput": "da2-zfvm5pbkgrebfoy4yjab2jjy3e"
+        "GraphQLAPIIdOutput": "e6pfsw7y2nhuhn7dw2pbrtu7rq",
+        "GraphQLAPIEndpointOutput": "https://zqjywjxk5becxjymv35o5f2giy.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-kh5mdltezvd4vbvabfmw5tua2q"
       },
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-instersocial-dev-30213-deployment/amplify-cfn-templates/api/cloudformation-template.json",
-        "logicalId": "apiinstersocial"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-intersocialcap-dev-165806-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiintersocialcap"
       },
-      "lastPushTimeStamp": "2022-11-16T06:13:50.734Z",
-      "lastPushDirHash": "rliYRrEOoGF8yuJ46rGR9wk2Q40="
+      "lastPushTimeStamp": "2022-11-27T21:23:29.896Z",
+      "lastPushDirHash": "+XbYlu9I4pHnsZ5lcwjB7fmqdAM="
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "dev": {
     "configLevel": "project",
-    "useProfile": true,
-    "profileName": "intersocial"
+    "useProfile": false,
+    "awsConfigFilePath": "C:\\Users\\mglin\\.amplify\\awscloudformation\\K08SswFtIr"
   }
 }

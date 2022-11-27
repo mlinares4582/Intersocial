@@ -44,8 +44,7 @@ const LeftContianer = ({ users }: LeftContianerProps) => {
         </View>
     )
 } 
-
-
+// user?.["image"]
 
 
 export default LeftContianer;

@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
     "auth": {
-        "inter777bc3aa": {
+        "intersocialcap31ac7461": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",
@@ -11,16 +11,10 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "api": {
-        "inter": {
+        "intersocialcap": {
             "GraphQLAPIKeyOutput": "string",
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
-        }
-    },
-    "storage": {
-        "Intersocial": {
-            "BucketName": "string",
-            "Region": "string"
         }
     }
 }

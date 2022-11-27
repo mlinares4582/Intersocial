@@ -1,5 +1,5 @@
 {
-  "Description": "Root Stack for AWS Amplify Console",
+  "Description": "Root Stack for AWS Amplify CLI",
   "AWSTemplateFormatVersion": "2010-09-09",
   "Parameters": {
     "DeploymentBucketName": {
@@ -152,15 +152,15 @@
         }
       }
     },
-    "authinstersocialbb0435e2": {
+    "authintersocialcap31ac7461": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-instersocial-dev-30213-deployment/amplify-cfn-templates/auth/instersocialbb0435e2-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-intersocialcap-dev-165806-deployment/amplify-cfn-templates/auth/intersocialcap31ac7461-cloudformation-template.json",
         "Parameters": {
-          "identityPoolName": "instersocialbb0435e2_identitypool_bb0435e2",
+          "identityPoolName": "intersocialcap31ac7461_identitypool_31ac7461",
           "allowUnauthenticatedIdentities": false,
-          "resourceNameTruncated": "insterbb0435e2",
-          "userPoolName": "instersocialbb0435e2_userpool_bb0435e2",
+          "resourceNameTruncated": "inters31ac7461",
+          "userPoolName": "intersocialcap31ac7461_userpool_31ac7461",
           "autoVerifiedAttributes": "email",
           "mfaConfiguration": "OFF",
           "mfaTypes": "SMS Text Message",
@@ -177,10 +177,10 @@
           "userpoolClientRefreshTokenValidity": 30,
           "userpoolClientWriteAttributes": "email",
           "userpoolClientReadAttributes": "email",
-          "userpoolClientLambdaRole": "insterbb0435e2_userpoolclient_lambda_role",
+          "userpoolClientLambdaRole": "inters31ac7461_userpoolclient_lambda_role",
           "userpoolClientSetAttributes": false,
-          "sharedId": "bb0435e2",
-          "resourceName": "instersocialbb0435e2",
+          "sharedId": "31ac7461",
+          "resourceName": "intersocialcap31ac7461",
           "authSelections": "identityPoolAndUserPool",
           "useDefault": "default",
           "userPoolGroupList": "",
@@ -205,16 +205,16 @@
         }
       }
     },
-    "apiinstersocial": {
+    "apiintersocialcap": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-instersocial-dev-30213-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-intersocialcap-dev-165806-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "Parameters": {
-          "AppSyncApiName": "instersocial",
+          "AppSyncApiName": "intersocialcap",
           "DynamoDBBillingMode": "PAY_PER_REQUEST",
           "DynamoDBEnableServerSideEncryption": false,
-          "S3DeploymentBucket": "amplify-instersocial-dev-30213-deployment",
-          "S3DeploymentRootKey": "amplify-appsync-files/0709516795913ec222edfb6ad974eedf1845eebf",
+          "S3DeploymentBucket": "amplify-intersocialcap-dev-165806-deployment",
+          "S3DeploymentRootKey": "amplify-appsync-files/9b290034fa437bb62bc27abcf5200271afe4655f",
           "env": "dev"
         }
       }
@@ -223,7 +223,7 @@
       "DependsOn": [
         "AuthRole",
         "UnauthRole",
-        "authinstersocialbb0435e2"
+        "authintersocialcap31ac7461"
       ],
       "Type": "AWS::Lambda::Function",
       "Properties": {
@@ -318,7 +318,7 @@
         },
         "idpId": {
           "Fn::GetAtt": [
-            "authinstersocialbb0435e2",
+            "authintersocialcap31ac7461",
             "Outputs.IdentityPoolId"
           ]
         },

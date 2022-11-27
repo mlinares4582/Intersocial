@@ -5,11 +5,13 @@ import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 import { Amplify, Auth, API, graphqlOperation } from 'aws-amplify';
-import awsconfig from './src/aws-exports';
 import { withAuthenticator } from 'aws-amplify-react-native';
 import {getUser} from './graphql/queries';
 import {createUser} from './graphql/mutations';
 import { CreateUserInput } from './API';
+import awsExports from './src/aws-exports';
+// import awsExports from './aws-exports';
+Amplify.configure(awsExports);
 
 
  function App() {
@@ -18,16 +20,16 @@ import { CreateUserInput } from './API';
 
   const getImageRandom =() =>{
 
-    return 'https://static.wikia.nocookie.net/characters/images/5/5d/Eren-Jaeger.jpg/revision/latest?cb=20160708134212'
+    return 'https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png'
 
   }
 
   const saveUserToDB = async (user: CreateUserInput) => {
-    // console.log("user", user)
+    console.log("user", user)
     await API.graphql(graphqlOperation(createUser, {input: user}))
 
   }
-  Amplify.configure(awsconfig);
+  Amplify.configure(awsExports);
 
 
   useEffect (() => {
@@ -57,7 +59,6 @@ import { CreateUserInput } from './API';
         
       }      
     }
-
     updateUser();
   }, [])
 

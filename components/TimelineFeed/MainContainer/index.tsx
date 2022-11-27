@@ -40,7 +40,7 @@ const MainContianer = ({ post }: MainContianerProps) => {
     fetchUser()
     }, [])
 
-    // console.log("username",post.image)
+    console.log("usernameeeeeee",user)
     return (
     <View style={styles.container}>
         <View style={styles.postHeaderContainer}>

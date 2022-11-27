@@ -1,6 +1,6 @@
 {
   "auth": {
-    "instersocialbb0435e2": {
+    "intersocialcap31ac7461": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -26,7 +26,7 @@
     }
   },
   "api": {
-    "instersocial": {
+    "intersocialcap": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -36,8 +36,8 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 365,
-              "apiKeyExpirationDate": "2023-11-16T06:09:09.267Z",
-              "description": "instersocial"
+              "apiKeyExpirationDate": "2023-11-27T21:14:51.039Z",
+              "description": "capstone"
             }
           },
           "additionalAuthenticationProviders": []
